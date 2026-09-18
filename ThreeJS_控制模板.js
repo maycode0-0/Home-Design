@@ -75,6 +75,12 @@ export class HomeDesignControls {
         });
       }
     }
+
+    // GLB light nodes start visible. Apply manifest defaults before the first render
+    // so controls with a default "off" state do not flash on screen.
+    for (const control of manifest.lightControls) {
+      this.applyLightState(control, this.states.get(control.id));
+    }
   }
 
   static fromGLTF(gltf) {
@@ -174,7 +180,9 @@ export class HomeDesignControls {
   }
 
   playAnimationState(control, state) {
-    const clipNames = control.clips?.[state];
+    // Older manifests use `close` while their public state is `closed`.
+    const clipNames = control.clips?.[state]
+      || (state === "closed" ? control.clips?.close : undefined);
     if (!clipNames) throw new Error(`Animation state ${state} is not defined for ${control.id}`);
 
     const active = this.activeActions.get(control.id) || new Set();
