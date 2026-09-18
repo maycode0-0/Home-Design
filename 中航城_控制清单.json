@@ -1,0 +1,4563 @@
+{
+  "version": 2,
+  "schema": "home-design-threejs-controls",
+  "runtime": "three.js",
+  "fps": 24.0,
+  "discovery": {
+    "manifestObject": "ThreeJS_交互控制清单",
+    "manifestProperty": "threejs_interaction_manifest",
+    "controlIdProperty": "threejs_control_id",
+    "controlTypeProperty": "threejs_control_type",
+    "clickableProperty": "threejs_clickable",
+    "raycastableProperty": "threejs_raycastable"
+  },
+  "animationControls": [
+    {
+      "id": "curtain_000",
+      "label": "主卧_对开窗帘",
+      "type": "curtain",
+      "legacyAnimationType": "curtain",
+      "mode": "draw",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "主卧_对开窗帘",
+      "targets": [
+        "主卧_对开窗帘_右帘_动画控制",
+        "主卧_对开窗帘_左帘_动画控制"
+      ],
+      "clickTargets": [
+        "主卧_对开窗帘_右帘",
+        "主卧_对开窗帘_右帘头",
+        "主卧_对开窗帘_左帘",
+        "主卧_对开窗帘_左帘头"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Curtain_000_P1_Open",
+          "THREE_Curtain_000_P0_Open"
+        ],
+        "close": [
+          "THREE_Curtain_000_P1_Close",
+          "THREE_Curtain_000_P0_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "curtain_001",
+      "label": "次卧_对开窗帘",
+      "type": "curtain",
+      "legacyAnimationType": "curtain",
+      "mode": "draw",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "次卧_对开窗帘",
+      "targets": [
+        "次卧_对开窗帘_右帘_动画控制",
+        "次卧_对开窗帘_左帘_动画控制"
+      ],
+      "clickTargets": [
+        "次卧_对开窗帘_右帘",
+        "次卧_对开窗帘_右帘头",
+        "次卧_对开窗帘_左帘",
+        "次卧_对开窗帘_左帘头"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Curtain_001_P1_Open",
+          "THREE_Curtain_001_P0_Open"
+        ],
+        "close": [
+          "THREE_Curtain_001_P1_Close",
+          "THREE_Curtain_001_P0_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "curtain_002",
+      "label": "客厅_金刚纱窗帘_01",
+      "type": "curtain",
+      "legacyAnimationType": "curtain",
+      "mode": "draw",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "客厅_金刚纱窗帘_01",
+      "targets": [
+        "客厅_金刚纱窗帘_01_单帘_动画控制"
+      ],
+      "clickTargets": [
+        "客厅_金刚纱窗帘_01_单帘",
+        "客厅_金刚纱窗帘_01_单帘头"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Curtain_002_P0_Open"
+        ],
+        "close": [
+          "THREE_Curtain_002_P0_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "curtain_003",
+      "label": "客厅_金刚纱窗帘_02",
+      "type": "curtain",
+      "legacyAnimationType": "curtain",
+      "mode": "draw",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "客厅_金刚纱窗帘_02",
+      "targets": [
+        "客厅_金刚纱窗帘_02_单帘_动画控制"
+      ],
+      "clickTargets": [
+        "客厅_金刚纱窗帘_02_单帘",
+        "客厅_金刚纱窗帘_02_单帘头"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Curtain_003_P0_Open"
+        ],
+        "close": [
+          "THREE_Curtain_003_P0_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "curtain_004",
+      "label": "露台门_金刚纱窗帘",
+      "type": "curtain",
+      "legacyAnimationType": "curtain",
+      "mode": "draw",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "露台门_金刚纱窗帘",
+      "targets": [
+        "露台门_金刚纱窗帘_单帘_动画控制"
+      ],
+      "clickTargets": [
+        "露台门_金刚纱窗帘_单帘",
+        "露台门_金刚纱窗帘_单帘头"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Curtain_004_P0_Open"
+        ],
+        "close": [
+          "THREE_Curtain_004_P0_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "door_000",
+      "label": "主卧门_门扇",
+      "type": "door",
+      "legacyAnimationType": "door",
+      "mode": "swing",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "主卧门_门扇",
+      "targets": [
+        "主卧门_门扇"
+      ],
+      "clickTargets": [
+        "主卧门_门扇"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Door_000_Open"
+        ],
+        "close": [
+          "THREE_Door_000_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "door_001",
+      "label": "主卫门_门扇",
+      "type": "door",
+      "legacyAnimationType": "door",
+      "mode": "swing",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "主卫门_门扇",
+      "targets": [
+        "主卫门_门扇"
+      ],
+      "clickTargets": [
+        "主卫门_门扇"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Door_001_Open"
+        ],
+        "close": [
+          "THREE_Door_001_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "door_002",
+      "label": "书房门_门扇",
+      "type": "door",
+      "legacyAnimationType": "door",
+      "mode": "swing",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "书房门_门扇",
+      "targets": [
+        "书房门_门扇"
+      ],
+      "clickTargets": [
+        "书房门_门扇"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Door_002_Open"
+        ],
+        "close": [
+          "THREE_Door_002_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "door_003",
+      "label": "入户门_门扇",
+      "type": "door",
+      "legacyAnimationType": "door",
+      "mode": "swing",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "入户门_门扇",
+      "targets": [
+        "入户门_门扇"
+      ],
+      "clickTargets": [
+        "入户门_门扇"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Door_003_Open"
+        ],
+        "close": [
+          "THREE_Door_003_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "door_004",
+      "label": "次卧门_门扇",
+      "type": "door",
+      "legacyAnimationType": "door",
+      "mode": "swing",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "次卧门_门扇",
+      "targets": [
+        "次卧门_门扇"
+      ],
+      "clickTargets": [
+        "次卧门_门扇"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Door_004_Open"
+        ],
+        "close": [
+          "THREE_Door_004_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "door_005",
+      "label": "次卫门_门扇",
+      "type": "door",
+      "legacyAnimationType": "door",
+      "mode": "swing",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "次卫门_门扇",
+      "targets": [
+        "次卫门_门扇"
+      ],
+      "clickTargets": [
+        "次卫门_门扇"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Door_005_Open"
+        ],
+        "close": [
+          "THREE_Door_005_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_000",
+      "label": "主卧_落地窗_开扇_玻璃",
+      "type": "window",
+      "legacyAnimationType": "window",
+      "mode": "swing",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "主卧_落地窗_开扇_玻璃",
+      "targets": [
+        "主卧_落地窗_开扇_玻璃",
+        "主卧_落地窗_开扇_窗框"
+      ],
+      "clickTargets": [
+        "主卧_落地窗_开扇_玻璃",
+        "主卧_落地窗_开扇_窗框"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_000_P0_Open",
+          "THREE_Window_000_P1_Open"
+        ],
+        "close": [
+          "THREE_Window_000_P0_Close",
+          "THREE_Window_000_P1_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_002",
+      "label": "主卫_玻璃窗_玻璃",
+      "type": "window",
+      "legacyAnimationType": "window",
+      "mode": "slide",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "主卫_玻璃窗_玻璃",
+      "targets": [
+        "主卫_玻璃窗_玻璃"
+      ],
+      "clickTargets": [
+        "主卫_玻璃窗_玻璃"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_002_P0_Open"
+        ],
+        "close": [
+          "THREE_Window_002_P0_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_003",
+      "label": "书房_落地窗_开扇_玻璃",
+      "type": "window",
+      "legacyAnimationType": "window",
+      "mode": "swing",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "书房_落地窗_开扇_玻璃",
+      "targets": [
+        "书房_落地窗_开扇_玻璃",
+        "书房_落地窗_开扇_窗框"
+      ],
+      "clickTargets": [
+        "书房_落地窗_开扇_玻璃",
+        "书房_落地窗_开扇_窗框"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_003_P0_Open",
+          "THREE_Window_003_P1_Open"
+        ],
+        "close": [
+          "THREE_Window_003_P0_Close",
+          "THREE_Window_003_P1_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_006",
+      "label": "厨房_推拉窗_玻璃_01_02",
+      "type": "window",
+      "legacyAnimationType": "window",
+      "mode": "slide",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "厨房_推拉窗_玻璃_01_02",
+      "targets": [
+        "厨房_推拉窗_玻璃_01_02",
+        "厨房_推拉窗_窗框_01_02"
+      ],
+      "clickTargets": [
+        "厨房_推拉窗_玻璃_01_02",
+        "厨房_推拉窗_窗框_01_02"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_006_P0_Open",
+          "THREE_Window_006_P1_Open"
+        ],
+        "close": [
+          "THREE_Window_006_P0_Close",
+          "THREE_Window_006_P1_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_008",
+      "label": "厨房_推拉窗_玻璃_02_02",
+      "type": "window",
+      "legacyAnimationType": "window",
+      "mode": "slide",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "厨房_推拉窗_玻璃_02_02",
+      "targets": [
+        "厨房_推拉窗_玻璃_02_02",
+        "厨房_玻璃窗_窗框_02_02"
+      ],
+      "clickTargets": [
+        "厨房_推拉窗_玻璃_02_02",
+        "厨房_玻璃窗_窗框_02_02"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_008_P0_Open",
+          "THREE_Window_008_P1_Open"
+        ],
+        "close": [
+          "THREE_Window_008_P0_Close",
+          "THREE_Window_008_P1_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_009",
+      "label": "客厅_落地窗_开扇_玻璃",
+      "type": "window",
+      "legacyAnimationType": "window",
+      "mode": "swing",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "客厅_落地窗_开扇_玻璃",
+      "targets": [
+        "客厅_落地窗_开扇_玻璃",
+        "客厅_落地窗_开扇_窗框"
+      ],
+      "clickTargets": [
+        "客厅_落地窗_开扇_玻璃",
+        "客厅_落地窗_开扇_窗框"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_009_P0_Open",
+          "THREE_Window_009_P1_Open"
+        ],
+        "close": [
+          "THREE_Window_009_P0_Close",
+          "THREE_Window_009_P1_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_011",
+      "label": "客厅_落地窗_玻璃_02",
+      "type": "window",
+      "legacyAnimationType": "window",
+      "mode": "slide",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "客厅_落地窗_玻璃_02",
+      "targets": [
+        "客厅_落地窗_玻璃_02"
+      ],
+      "clickTargets": [
+        "客厅_落地窗_玻璃_02"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_011_P0_Open"
+        ],
+        "close": [
+          "THREE_Window_011_P0_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_012",
+      "label": "次卧_落地窗_开扇_玻璃",
+      "type": "window",
+      "legacyAnimationType": "window",
+      "mode": "swing",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "次卧_落地窗_开扇_玻璃",
+      "targets": [
+        "次卧_落地窗_开扇_玻璃",
+        "次卧_落地窗_开扇_窗框"
+      ],
+      "clickTargets": [
+        "次卧_落地窗_开扇_玻璃",
+        "次卧_落地窗_开扇_窗框"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_012_P0_Open",
+          "THREE_Window_012_P1_Open"
+        ],
+        "close": [
+          "THREE_Window_012_P0_Close",
+          "THREE_Window_012_P1_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_014",
+      "label": "次卫_玻璃窗_玻璃",
+      "type": "window",
+      "legacyAnimationType": "window",
+      "mode": "slide",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "次卫_玻璃窗_玻璃",
+      "targets": [
+        "次卫_玻璃窗_玻璃"
+      ],
+      "clickTargets": [
+        "次卫_玻璃窗_玻璃"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_014_P0_Open"
+        ],
+        "close": [
+          "THREE_Window_014_P0_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_015",
+      "label": "生活阳台门_玻璃门_玻璃_01",
+      "type": "sliding_door",
+      "legacyAnimationType": "window",
+      "mode": "slide",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "生活阳台门_玻璃门_玻璃_01",
+      "targets": [
+        "生活阳台门_玻璃门_玻璃_01",
+        "生活阳台门_玻璃门框_01"
+      ],
+      "clickTargets": [
+        "生活阳台门_玻璃门_玻璃_01",
+        "生活阳台门_玻璃门框_01"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_015_P0_Open",
+          "THREE_Window_015_P1_Open"
+        ],
+        "close": [
+          "THREE_Window_015_P0_Close",
+          "THREE_Window_015_P1_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "window_017",
+      "label": "露台门_推拉门_玻璃_01",
+      "type": "sliding_door",
+      "legacyAnimationType": "window",
+      "mode": "slide",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "closed",
+      "root": "露台门_推拉门_玻璃_01",
+      "targets": [
+        "露台门_推拉门_玻璃_01",
+        "露台门_推拉门框_01"
+      ],
+      "clickTargets": [
+        "露台门_推拉门_玻璃_01",
+        "露台门_推拉门框_01"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Window_017_P0_Open",
+          "THREE_Window_017_P1_Open"
+        ],
+        "close": [
+          "THREE_Window_017_P0_Close",
+          "THREE_Window_017_P1_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 1.25
+      }
+    },
+    {
+      "id": "screen_living_room_01",
+      "label": "客厅_投影幕布",
+      "type": "projection_screen",
+      "legacyAnimationType": "projection_screen",
+      "mode": "vertical_roll",
+      "interaction": "toggle",
+      "states": [
+        "closed",
+        "open"
+      ],
+      "defaultState": "open",
+      "root": "客厅_投影幕布",
+      "targets": [
+        "客厅_投影幕布_幕面升降控制",
+        "客厅_投影幕布_底杆升降控制"
+      ],
+      "clickTargets": [
+        "客厅_投影幕布_顶部外壳",
+        "客厅_投影幕布_黑色幕布",
+        "客厅_投影幕布_白色投影面",
+        "客厅_投影幕布_底杆"
+      ],
+      "clips": {
+        "open": [
+          "THREE_Screen_LivingRoom_01_Fabric_Open",
+          "THREE_Screen_LivingRoom_01_Bar_Open"
+        ],
+        "close": [
+          "THREE_Screen_LivingRoom_01_Fabric_Close",
+          "THREE_Screen_LivingRoom_01_Bar_Close"
+        ]
+      },
+      "playback": {
+        "loop": "once",
+        "clampWhenFinished": true,
+        "durationSeconds": 2.5
+      }
+    }
+  ],
+  "lightControls": [
+    {
+      "id": "light_primary_bedroom_pendant",
+      "label": "主卧_吊灯",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卧_吊灯_灯光交互",
+      "clickTargets": [
+        "主卧_吊灯_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "主卧_吊灯",
+          "onEnergyBlender": 2007.72998046875,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "POINT",
+          "gltfLightType": "point"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卧_吊灯_主体",
+          "materials": [
+            {
+              "material": "THREE_light_primary_bedroom_pendant_Emissive_05",
+              "slot": 5,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    199.2156982421875,
+                    149.80392456054688,
+                    99.60784912109375,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle"
+      ],
+      "adjustable": false
+    },
+    {
+      "id": "light_primary_bedroom_ceiling_niche_strip",
+      "label": "主卧_吊顶小凹槽灯带",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卧_吊顶小凹槽灯带_灯光交互",
+      "clickTargets": [
+        "主卧_吊顶小凹槽灯带_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "主卧_吊顶小凹槽灯带_灯光_01",
+          "onEnergyBlender": 87.59950256347656,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卧_吊顶小凹槽灯带_主体",
+          "materials": [
+            {
+              "material": "THREE_light_primary_bedroom_ceiling_niche_strip_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "自发光",
+                  "nodeType": "Emission",
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.6800000071525574,
+                    0.41999998688697815,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "castShadow": true,
+      "occluders": [
+        "主卧_吊顶小凹槽灯带_遮光盖板"
+      ]
+    },
+    {
+      "id": "light_primary_bedroom_ceiling_strip",
+      "label": "主卧_吊顶灯带",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卧_吊顶灯带_灯光交互",
+      "clickTargets": [
+        "主卧_吊顶灯带_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "主卧_吊顶灯带_灯光_01",
+          "onEnergyBlender": 88.0999984741211,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卧_吊顶灯带_灯光_02",
+          "onEnergyBlender": 88.0999984741211,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卧_吊顶灯带_灯光_03",
+          "onEnergyBlender": 66.625,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卧_吊顶灯带_灯光_04",
+          "onEnergyBlender": 66.625,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卧_吊顶灯带_主体",
+          "materials": [
+            {
+              "material": "THREE_light_primary_bedroom_ceiling_strip_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "自发光",
+                  "nodeType": "Emission",
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.6800000071525574,
+                    0.41999998688697815,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "castShadow": true,
+      "occluders": [
+        "主卧_吊顶灯带_遮光盖板"
+      ]
+    },
+    {
+      "id": "light_primary_bedroom_spot_01",
+      "label": "主卧_射灯_01",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卧_射灯_01_灯光交互",
+      "clickTargets": [
+        "主卧_射灯_01_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "主卧_射灯_01",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卧_射灯_01_主体",
+          "materials": [
+            {
+              "material": "THREE_light_primary_bedroom_spot_01_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_primary_bedroom_spot_02",
+      "label": "主卧_射灯_02",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卧_射灯_02_灯光交互",
+      "clickTargets": [
+        "主卧_射灯_02_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "主卧_射灯_02",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卧_射灯_02_主体",
+          "materials": [
+            {
+              "material": "THREE_light_primary_bedroom_spot_02_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_primary_bedroom_spot_03",
+      "label": "主卧_射灯_03",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卧_射灯_03_灯光交互",
+      "clickTargets": [
+        "主卧_射灯_03_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "主卧_射灯_03",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卧_射灯_03_主体",
+          "materials": [
+            {
+              "material": "THREE_light_primary_bedroom_spot_03_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_primary_bedroom_spot_04",
+      "label": "主卧_射灯_04",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卧_射灯_04_灯光交互",
+      "clickTargets": [
+        "主卧_射灯_04_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "主卧_射灯_04",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卧_射灯_04_主体",
+          "materials": [
+            {
+              "material": "THREE_light_primary_bedroom_spot_04_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_primary_bedroom_spot_05",
+      "label": "主卧_射灯_05",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卧_射灯_05_灯光交互",
+      "clickTargets": [
+        "主卧_射灯_05_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "主卧_射灯_05",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卧_射灯_05_主体",
+          "materials": [
+            {
+              "material": "THREE_light_primary_bedroom_spot_05_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_primary_bedroom_spot_06",
+      "label": "主卧_射灯_06",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卧_射灯_06_灯光交互",
+      "clickTargets": [
+        "主卧_射灯_06_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "主卧_射灯_06",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卧_射灯_06_主体",
+          "materials": [
+            {
+              "material": "THREE_light_primary_bedroom_spot_06_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_primary_bedroom_spot_07",
+      "label": "主卧_射灯_07",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卧_射灯_07_灯光交互",
+      "clickTargets": [
+        "主卧_射灯_07_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "主卧_射灯_07",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卧_射灯_07_主体",
+          "materials": [
+            {
+              "material": "THREE_light_primary_bedroom_spot_07_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_study_pendant",
+      "label": "书房_吊灯",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "书房_吊灯_灯光交互",
+      "clickTargets": [
+        "书房_吊灯_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "书房_吊灯",
+          "onEnergyBlender": 1027.7745361328125,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "POINT",
+          "gltfLightType": "point"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "书房_吊灯_主体",
+          "materials": [
+            {
+              "material": "THREE_light_study_pendant_Emissive_05",
+              "slot": 5,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    199.2156982421875,
+                    149.80392456054688,
+                    99.60784912109375,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle"
+      ],
+      "adjustable": false
+    },
+    {
+      "id": "light_kitchen_spot_01",
+      "label": "厨房_射灯_01",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "厨房_射灯_01_灯光交互",
+      "clickTargets": [
+        "厨房_射灯_01_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "厨房_射灯_01",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "厨房_射灯_01_主体",
+          "materials": [
+            {
+              "material": "THREE_light_kitchen_spot_01_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_kitchen_spot_02",
+      "label": "厨房_射灯_02",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "厨房_射灯_02_灯光交互",
+      "clickTargets": [
+        "厨房_射灯_02_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "厨房_射灯_02",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "厨房_射灯_02_主体",
+          "materials": [
+            {
+              "material": "THREE_light_kitchen_spot_02_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_kitchen_spot_03",
+      "label": "厨房_射灯_03",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "厨房_射灯_03_灯光交互",
+      "clickTargets": [
+        "厨房_射灯_03_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "厨房_射灯_03",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "厨房_射灯_03_主体",
+          "materials": [
+            {
+              "material": "THREE_light_kitchen_spot_03_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_kitchen_spot_04",
+      "label": "厨房_射灯_04",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "厨房_射灯_04_灯光交互",
+      "clickTargets": [
+        "厨房_射灯_04_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "厨房_射灯_04",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "厨房_射灯_04_主体",
+          "materials": [
+            {
+              "material": "THREE_light_kitchen_spot_04_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_platform_recess_strip",
+      "label": "地台_凹槽灯带",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "地台_凹槽灯带_灯光交互",
+      "clickTargets": [
+        "灯带_发光体_地台凹槽"
+      ],
+      "lights": [
+        {
+          "object": "灯光_向下_地台右直边",
+          "onEnergyBlender": 62.51906204223633,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_01",
+          "onEnergyBlender": 3.632462739944458,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_02",
+          "onEnergyBlender": 3.632307529449463,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_03",
+          "onEnergyBlender": 3.632460355758667,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_04",
+          "onEnergyBlender": 3.632455348968506,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_05",
+          "onEnergyBlender": 3.632319927215576,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_06",
+          "onEnergyBlender": 3.6324615478515625,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_07",
+          "onEnergyBlender": 3.632474899291992,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_08",
+          "onEnergyBlender": 3.6323189735412598,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_09",
+          "onEnergyBlender": 3.632499933242798,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_10",
+          "onEnergyBlender": 3.6324758529663086,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_11",
+          "onEnergyBlender": 3.6323392391204834,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台圆弧_12",
+          "onEnergyBlender": 3.6324946880340576,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台左直边",
+          "onEnergyBlender": 13.03055477142334,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        },
+        {
+          "object": "灯光_向下_地台竖向连接段",
+          "onEnergyBlender": 23.630619049072266,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": false
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "灯带_发光体_地台凹槽",
+          "materials": [
+            {
+              "material": "THREE_light_platform_recess_strip_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "自发光",
+                  "nodeType": "Emission",
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.6800000071525574,
+                    0.41999998688697815,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "castShadow": false
+    },
+    {
+      "id": "light_platform_spot_01",
+      "label": "地台_射灯_01",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "地台_射灯_01_灯光交互",
+      "clickTargets": [
+        "地台_射灯_01_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "地台_射灯_01",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "地台_射灯_01_主体",
+          "materials": [
+            {
+              "material": "THREE_light_platform_spot_01_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_platform_spot_02",
+      "label": "地台_射灯_02",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "地台_射灯_02_灯光交互",
+      "clickTargets": [
+        "地台_射灯_02_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "地台_射灯_02",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "地台_射灯_02_主体",
+          "materials": [
+            {
+              "material": "THREE_light_platform_spot_02_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_living_room_pendant",
+      "label": "客厅_吊灯",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "客厅_吊灯_灯光交互",
+      "clickTargets": [
+        "客厅_吊灯_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "客厅_吊灯",
+          "onEnergyBlender": 3066.335693359375,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "POINT",
+          "gltfLightType": "point"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "客厅_吊灯_主体",
+          "materials": [
+            {
+              "material": "THREE_light_living_room_pendant_Emissive_05",
+              "slot": 5,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    199.2156982421875,
+                    149.80392456054688,
+                    99.60784912109375,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle"
+      ],
+      "adjustable": false
+    },
+    {
+      "id": "light_living_room_ceiling_strip",
+      "label": "客厅_吊顶灯带",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "客厅_吊顶灯带_灯光交互",
+      "clickTargets": [
+        "客厅_吊顶灯带_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "客厅_吊顶灯带_灯光_01",
+          "onEnergyBlender": 125.3550033569336,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "客厅_吊顶灯带_灯光_02",
+          "onEnergyBlender": 125.3550033569336,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "客厅_吊顶灯带_灯光_03",
+          "onEnergyBlender": 83.69917297363281,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "客厅_吊顶灯带_灯光_04",
+          "onEnergyBlender": 83.69917297363281,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "客厅_吊顶灯带_主体",
+          "materials": [
+            {
+              "material": "THREE_light_living_room_ceiling_strip_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "自发光",
+                  "nodeType": "Emission",
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.6800000071525574,
+                    0.41999998688697815,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "castShadow": true,
+      "occluders": [
+        "客厅_吊顶灯带_遮光盖板"
+      ]
+    },
+    {
+      "id": "light_secondary_bedroom_pendant",
+      "label": "次卧_吊灯",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "次卧_吊灯_灯光交互",
+      "clickTargets": [
+        "次卧_吊灯_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "次卧_吊灯",
+          "onEnergyBlender": 1027.7745361328125,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "POINT",
+          "gltfLightType": "point"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "次卧_吊灯_主体",
+          "materials": [
+            {
+              "material": "THREE_light_secondary_bedroom_pendant_Emissive_05",
+              "slot": 5,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    199.2156982421875,
+                    149.80392456054688,
+                    99.60784912109375,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle"
+      ],
+      "adjustable": false
+    },
+    {
+      "id": "light_secondary_bathroom_spot_01",
+      "label": "次卫_射灯_01",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "次卫_射灯_01_灯光交互",
+      "clickTargets": [
+        "次卫_射灯_01_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "次卫_射灯_01",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "次卫_射灯_01_主体",
+          "materials": [
+            {
+              "material": "THREE_light_secondary_bathroom_spot_01_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_hallway_spot_01",
+      "label": "过道_射灯_01",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "过道_射灯_01_灯光交互",
+      "clickTargets": [
+        "过道_射灯_01_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "过道_射灯_01",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "过道_射灯_01_主体",
+          "materials": [
+            {
+              "material": "THREE_light_hallway_spot_01_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_hallway_spot_02",
+      "label": "过道_射灯_02",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "过道_射灯_02_灯光交互",
+      "clickTargets": [
+        "过道_射灯_02_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "过道_射灯_02",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "过道_射灯_02_主体",
+          "materials": [
+            {
+              "material": "THREE_light_hallway_spot_02_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_hallway_spot_03",
+      "label": "过道_射灯_03",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "过道_射灯_03_灯光交互",
+      "clickTargets": [
+        "过道_射灯_03_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "过道_射灯_03",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "过道_射灯_03_主体",
+          "materials": [
+            {
+              "material": "THREE_light_hallway_spot_03_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_hallway_spot_04",
+      "label": "过道_射灯_04",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "过道_射灯_04_灯光交互",
+      "clickTargets": [
+        "过道_射灯_04_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "过道_射灯_04",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "过道_射灯_04_主体",
+          "materials": [
+            {
+              "material": "THREE_light_hallway_spot_04_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_hallway_spot_05",
+      "label": "过道_射灯_05",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "过道_射灯_05_灯光交互",
+      "clickTargets": [
+        "过道_射灯_05_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "过道_射灯_05",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "过道_射灯_05_主体",
+          "materials": [
+            {
+              "material": "THREE_light_hallway_spot_05_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_hallway_spot_06",
+      "label": "过道_射灯_06",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "过道_射灯_06_灯光交互",
+      "clickTargets": [
+        "过道_射灯_06_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "过道_射灯_06",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "过道_射灯_06_主体",
+          "materials": [
+            {
+              "material": "THREE_light_hallway_spot_06_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_dining_room_ceiling_strip",
+      "label": "餐厅_吊顶灯带",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "餐厅_吊顶灯带_灯光交互",
+      "clickTargets": [
+        "餐厅_吊顶灯带_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "餐厅_吊顶灯带_灯光_01",
+          "onEnergyBlender": 82.37999725341797,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "餐厅_吊顶灯带_灯光_02",
+          "onEnergyBlender": 82.37999725341797,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "餐厅_吊顶灯带_灯光_03",
+          "onEnergyBlender": 45.962501525878906,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "餐厅_吊顶灯带_灯光_04",
+          "onEnergyBlender": 45.962501525878906,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "餐厅_吊顶灯带_主体",
+          "materials": [
+            {
+              "material": "THREE_light_dining_room_ceiling_strip_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "自发光",
+                  "nodeType": "Emission",
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.6800000071525574,
+                    0.41999998688697815,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "castShadow": true,
+      "occluders": [
+        "餐厅_吊顶灯带_遮光盖板"
+      ]
+    },
+    {
+      "id": "light_dining_room_spot_01",
+      "label": "餐厅_射灯_01",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "餐厅_射灯_01_灯光交互",
+      "clickTargets": [
+        "餐厅_射灯_01_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "餐厅_射灯_01",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "餐厅_射灯_01_主体",
+          "materials": [
+            {
+              "material": "THREE_light_dining_room_spot_01_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_dining_room_spot_02",
+      "label": "餐厅_射灯_02",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "餐厅_射灯_02_灯光交互",
+      "clickTargets": [
+        "餐厅_射灯_02_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "餐厅_射灯_02",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "餐厅_射灯_02_主体",
+          "materials": [
+            {
+              "material": "THREE_light_dining_room_spot_02_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_dining_room_spot_03",
+      "label": "餐厅_射灯_03",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "餐厅_射灯_03_灯光交互",
+      "clickTargets": [
+        "餐厅_射灯_03_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "餐厅_射灯_03",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "餐厅_射灯_03_主体",
+          "materials": [
+            {
+              "material": "THREE_light_dining_room_spot_03_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_dining_room_spot_04",
+      "label": "餐厅_射灯_04",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "餐厅_射灯_04_灯光交互",
+      "clickTargets": [
+        "餐厅_射灯_04_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "餐厅_射灯_04",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "餐厅_射灯_04_主体",
+          "materials": [
+            {
+              "material": "THREE_light_dining_room_spot_04_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_dining_room_spot_05",
+      "label": "餐厅_射灯_05",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "餐厅_射灯_05_灯光交互",
+      "clickTargets": [
+        "餐厅_射灯_05_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "餐厅_射灯_05",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "餐厅_射灯_05_主体",
+          "materials": [
+            {
+              "material": "THREE_light_dining_room_spot_05_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_platform_ring_strip",
+      "label": "地台_圆环灯带",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "地台_圆环灯带_灯光交互",
+      "clickTargets": [
+        "地台_圆环灯带_主体"
+      ],
+      "lights": [
+        {
+          "object": "地台_圆环灯带_灯光_01",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_02",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_03",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_04",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_05",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_06",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_07",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_08",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_09",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_10",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_11",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_12",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_13",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_14",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_15",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "地台_圆环灯带_灯光_16",
+          "onEnergyBlender": 26.25,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "地台_圆环灯带_主体",
+          "materials": [
+            {
+              "material": "THREE_light_platform_ring_strip_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "自发光",
+                  "nodeType": "Emission",
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.68,
+                    0.42,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 46.957625985823384,
+        "luminousFluxLm": 3521.821948936754,
+        "ratedPowerPerMeterW": 12.0,
+        "luminousFluxPerMeterLm": 900.0,
+        "criRaMin": 90,
+        "beamAngleDeg": 120,
+        "colorTemperatureK": 3500,
+        "blenderEnergyScale": 8.944234108572672,
+        "blenderTotalEnergyW": 420.0,
+        "blenderCalibration": "环形区域灯阵列渲染能量降至420W，以减轻过曝；额定灯带功率保持不变"
+      },
+      "castShadow": true,
+      "lightBlocker": "地台_圆环灯带_遮光盖板"
+    },
+    {
+      "id": "light_living_room_spot_01",
+      "label": "客厅_射灯_01",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "客厅_射灯_01_灯光交互",
+      "clickTargets": [
+        "客厅_射灯_01_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "客厅_射灯_01",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "客厅_射灯_01_主体",
+          "materials": [
+            {
+              "material": "THREE_light_living_room_spot_01_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_living_room_spot_02",
+      "label": "客厅_射灯_02",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "客厅_射灯_02_灯光交互",
+      "clickTargets": [
+        "客厅_射灯_02_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "客厅_射灯_02",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "客厅_射灯_02_主体",
+          "materials": [
+            {
+              "material": "THREE_light_living_room_spot_02_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_living_room_spot_03",
+      "label": "客厅_射灯_03",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "客厅_射灯_03_灯光交互",
+      "clickTargets": [
+        "客厅_射灯_03_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "客厅_射灯_03",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "客厅_射灯_03_主体",
+          "materials": [
+            {
+              "material": "THREE_light_living_room_spot_03_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_living_room_spot_04",
+      "label": "客厅_射灯_04",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "客厅_射灯_04_灯光交互",
+      "clickTargets": [
+        "客厅_射灯_04_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "客厅_射灯_04",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "客厅_射灯_04_主体",
+          "materials": [
+            {
+              "material": "THREE_light_living_room_spot_04_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    },
+    {
+      "id": "light_living_room_spot_05",
+      "label": "客厅_射灯_05",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "客厅_射灯_05_灯光交互",
+      "clickTargets": [
+        "客厅_射灯_05_灯光点击区"
+      ],
+      "lights": [
+        {
+          "object": "客厅_射灯_05",
+          "onEnergyBlender": 420.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "客厅_射灯_05_主体",
+          "materials": [
+            {
+              "material": "THREE_light_living_room_spot_05_Emissive_00",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3500,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.03,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 350,
+        "criRaMin": 90,
+        "beamAngleDeg": 32,
+        "rotationRangeDeg": 30
+      }
+    }
+  ],
+  "runtimeContract": {
+    "animations": "按 clips.open / clips.close 查找 glTF animations；同组 clip 同步播放，LoopOnce 并 clampWhenFinished。",
+    "lights": "加载后缓存每个 THREE.Light.intensity 和发光材质 emissiveIntensity；off 设 visible=false、intensity=0、emissiveIntensity=0，on 恢复缓存值。",
+    "raycast": "仅将 userData.threejs_raycastable === true 的 Mesh 加入交互射线检测。",
+    "export": "使用内置 ThreeJS_导出GLB.py：AREA 灯在导出期间临时映射为同方向 SPOT，使 57 盏灯全部进入 KHR_lights_punctual；导出后恢复 Blender AREA 灯。",
+    "lightAdjustments": "仅对 capabilities 包含 brightness/color_temperature 的射灯和灯带调用 setBrightness(id, 0.03..1.0) 与 setColorTemperature(id, 2700..6500)。亮度按加载后的原始 intensity/emissiveIntensity 比例调整。"
+  },
+  "exportProfile": {
+    "format": "GLB",
+    "animations": true,
+    "animationMode": "ACTIONS",
+    "lights": true,
+    "customPropertiesExtras": true,
+    "areaLightCompatibility": "temporary_spot_conversion"
+  },
+  "capabilities": {
+    "adjustableLightTypes": [
+      "spotlight",
+      "strip"
+    ],
+    "colorTemperatureK": {
+      "min": 2700,
+      "max": 6500,
+      "default": 3500,
+      "step": 1
+    },
+    "brightness": {
+      "min": 0.03,
+      "max": 1.0,
+      "default": 1.0,
+      "step": 0.01,
+      "unit": "normalized"
+    },
+    "photometric": {
+      "ratedPowerW": 6,
+      "luminousFluxLm": 350,
+      "criRaMin": 90,
+      "beamAngleDeg": 32,
+      "rotationRangeDeg": 30
+    },
+    "notes": "保持 Blender 当前默认暖白外观；Three.js 调整时同步 Light.color、Light.intensity 和 emissiveIntensity。"
+  }
+}
