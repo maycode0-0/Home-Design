@@ -821,7 +821,7 @@
       "playback": {
         "loop": "once",
         "clampWhenFinished": true,
-        "durationSeconds": 2.5
+        "durationSeconds": 1.25
       }
     }
   ],
