@@ -2,7 +2,7 @@
   "version": 2,
   "schema": "home-design-threejs-controls",
   "runtime": "three.js",
-  "fps": 24,
+  "fps": 24.0,
   "discovery": {
     "manifestObject": "ThreeJS_交互控制清单",
     "manifestProperty": "threejs_interaction_manifest",
@@ -843,8 +843,8 @@
       "lights": [
         {
           "object": "主卧_吊灯",
-          "onEnergyBlender": 2007.72998046875,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 12170.0001,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "POINT",
           "gltfLightType": "point"
         }
@@ -860,13 +860,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
                     199.2156982421875,
                     149.80392456054688,
                     99.60784912109375,
-                    1
+                    1.0
                   ]
                 }
               ]
@@ -877,13 +877,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -908,8 +908,8 @@
       "lights": [
         {
           "object": "主卧_吊顶小凹槽灯带_灯光_01",
-          "onEnergyBlender": 87.59950256347656,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 255.0,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
@@ -926,13 +926,13 @@
                 {
                   "node": "自发光",
                   "nodeType": "Emission",
-                  "onStrength": 15,
-                  "offStrength": 0,
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
+                    1.0,
                     0.6800000071525574,
                     0.41999998688697815,
-                    1
+                    1.0
                   ]
                 }
               ]
@@ -943,13 +943,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -965,9 +965,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -993,32 +993,32 @@
       "lights": [
         {
           "object": "主卧_吊顶灯带_灯光_01",
-          "onEnergyBlender": 88.0999984741211,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 256.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "主卧_吊顶灯带_灯光_02",
-          "onEnergyBlender": 88.0999984741211,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 256.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "主卧_吊顶灯带_灯光_03",
-          "onEnergyBlender": 66.625,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 195.0,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "主卧_吊顶灯带_灯光_04",
-          "onEnergyBlender": 66.625,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 195.0,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
@@ -1035,13 +1035,13 @@
                 {
                   "node": "自发光",
                   "nodeType": "Emission",
-                  "onStrength": 15,
-                  "offStrength": 0,
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
+                    1.0,
                     0.6800000071525574,
                     0.41999998688697815,
-                    1
+                    1.0
                   ]
                 }
               ]
@@ -1052,13 +1052,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1074,9 +1074,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -1102,8 +1102,8 @@
       "lights": [
         {
           "object": "主卧_射灯_01",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 1544.9999,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -1119,13 +1119,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -1136,13 +1136,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1158,9 +1158,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -1189,8 +1189,8 @@
       "lights": [
         {
           "object": "主卧_射灯_02",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 1544.9999,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -1206,13 +1206,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -1223,13 +1223,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1245,9 +1245,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -1276,8 +1276,8 @@
       "lights": [
         {
           "object": "主卧_射灯_03",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 1544.9999,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -1293,13 +1293,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -1310,13 +1310,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1332,9 +1332,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -1363,8 +1363,8 @@
       "lights": [
         {
           "object": "主卧_射灯_04",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 1544.9999,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -1380,13 +1380,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -1397,13 +1397,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1419,9 +1419,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -1450,8 +1450,8 @@
       "lights": [
         {
           "object": "主卧_射灯_05",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 1544.9999,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -1467,13 +1467,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -1484,13 +1484,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1506,9 +1506,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -1537,8 +1537,8 @@
       "lights": [
         {
           "object": "主卧_射灯_06",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 1544.9999,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -1554,13 +1554,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -1571,13 +1571,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1593,9 +1593,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -1624,8 +1624,8 @@
       "lights": [
         {
           "object": "主卧_射灯_07",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 1544.9999,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -1641,13 +1641,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -1658,13 +1658,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1680,9 +1680,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -1711,8 +1711,8 @@
       "lights": [
         {
           "object": "书房_吊灯",
-          "onEnergyBlender": 1027.7745361328125,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 14619.9999,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "POINT",
           "gltfLightType": "point"
         }
@@ -1728,13 +1728,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
                     199.2156982421875,
                     149.80392456054688,
                     99.60784912109375,
-                    1
+                    1.0
                   ]
                 }
               ]
@@ -1745,13 +1745,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1776,8 +1776,8 @@
       "lights": [
         {
           "object": "厨房_射灯_01",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2148.3332,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -1793,13 +1793,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -1810,13 +1810,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1832,9 +1832,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -1863,8 +1863,8 @@
       "lights": [
         {
           "object": "厨房_射灯_02",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2148.3332,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -1880,13 +1880,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -1897,13 +1897,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -1919,9 +1919,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -1950,8 +1950,8 @@
       "lights": [
         {
           "object": "厨房_射灯_03",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2148.3332,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -1967,13 +1967,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -1984,13 +1984,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2006,9 +2006,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -2037,8 +2037,8 @@
       "lights": [
         {
           "object": "厨房_射灯_04",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2148.3332,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -2054,13 +2054,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -2071,13 +2071,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2093,9 +2093,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -2124,120 +2124,120 @@
       "lights": [
         {
           "object": "灯光_向下_地台右直边",
-          "onEnergyBlender": 62.51906204223633,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 71.2717,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_01",
-          "onEnergyBlender": 3.632462739944458,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_02",
-          "onEnergyBlender": 3.632307529449463,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.14,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_03",
-          "onEnergyBlender": 3.632460355758667,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_04",
-          "onEnergyBlender": 3.632455348968506,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_05",
-          "onEnergyBlender": 3.632319927215576,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_06",
-          "onEnergyBlender": 3.6324615478515625,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_07",
-          "onEnergyBlender": 3.632474899291992,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_08",
-          "onEnergyBlender": 3.6323189735412598,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_09",
-          "onEnergyBlender": 3.632499933242798,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_10",
-          "onEnergyBlender": 3.6324758529663086,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_11",
-          "onEnergyBlender": 3.6323392391204834,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台圆弧_12",
-          "onEnergyBlender": 3.6324946880340576,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 4.1417,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台左直边",
-          "onEnergyBlender": 13.03055477142334,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 14.855,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
         },
         {
           "object": "灯光_向下_地台竖向连接段",
-          "onEnergyBlender": 23.630619049072266,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 26.9383,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": false
@@ -2254,13 +2254,13 @@
                 {
                   "node": "自发光",
                   "nodeType": "Emission",
-                  "onStrength": 15,
-                  "offStrength": 0,
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
+                    1.0,
                     0.6800000071525574,
                     0.41999998688697815,
-                    1
+                    1.0
                   ]
                 }
               ]
@@ -2271,13 +2271,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2293,9 +2293,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -2318,8 +2318,8 @@
       "lights": [
         {
           "object": "地台_射灯_01",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 460.0,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -2335,13 +2335,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -2352,13 +2352,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2374,9 +2374,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -2405,8 +2405,8 @@
       "lights": [
         {
           "object": "地台_射灯_02",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 460.0,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -2422,13 +2422,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -2439,13 +2439,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2461,9 +2461,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -2492,8 +2492,8 @@
       "lights": [
         {
           "object": "客厅_吊灯",
-          "onEnergyBlender": 3066.335693359375,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 32670.0014,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "POINT",
           "gltfLightType": "point"
         }
@@ -2509,13 +2509,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
                     199.2156982421875,
                     149.80392456054688,
                     99.60784912109375,
-                    1
+                    1.0
                   ]
                 }
               ]
@@ -2526,13 +2526,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2557,32 +2557,32 @@
       "lights": [
         {
           "object": "客厅_吊顶灯带_灯光_01",
-          "onEnergyBlender": 125.3550033569336,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 725.0,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "客厅_吊顶灯带_灯光_02",
-          "onEnergyBlender": 125.3550033569336,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 725.0,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "客厅_吊顶灯带_灯光_03",
-          "onEnergyBlender": 83.69917297363281,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 485.0,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "客厅_吊顶灯带_灯光_04",
-          "onEnergyBlender": 83.69917297363281,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 485.0,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
@@ -2599,13 +2599,13 @@
                 {
                   "node": "自发光",
                   "nodeType": "Emission",
-                  "onStrength": 15,
-                  "offStrength": 0,
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
+                    1.0,
                     0.6800000071525574,
                     0.41999998688697815,
-                    1
+                    1.0
                   ]
                 }
               ]
@@ -2616,13 +2616,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2638,9 +2638,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -2666,8 +2666,8 @@
       "lights": [
         {
           "object": "次卧_吊灯",
-          "onEnergyBlender": 1027.7745361328125,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 15380.0005,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "POINT",
           "gltfLightType": "point"
         }
@@ -2683,13 +2683,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
                     199.2156982421875,
                     149.80392456054688,
                     99.60784912109375,
-                    1
+                    1.0
                   ]
                 }
               ]
@@ -2700,13 +2700,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2731,8 +2731,8 @@
       "lights": [
         {
           "object": "次卫_射灯_01",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2673.3332,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -2748,13 +2748,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -2765,13 +2765,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2787,9 +2787,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -2818,8 +2818,8 @@
       "lights": [
         {
           "object": "过道_射灯_01",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 443.3333,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -2835,13 +2835,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -2852,13 +2852,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2874,9 +2874,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -2905,8 +2905,8 @@
       "lights": [
         {
           "object": "过道_射灯_02",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 443.3333,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -2922,13 +2922,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -2939,13 +2939,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -2961,9 +2961,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -2992,8 +2992,8 @@
       "lights": [
         {
           "object": "过道_射灯_03",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 443.3333,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -3009,13 +3009,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -3026,13 +3026,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -3048,9 +3048,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -3079,8 +3079,8 @@
       "lights": [
         {
           "object": "过道_射灯_04",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 443.3333,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -3096,13 +3096,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -3113,13 +3113,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -3135,9 +3135,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -3166,8 +3166,8 @@
       "lights": [
         {
           "object": "过道_射灯_05",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 443.3333,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -3183,13 +3183,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -3200,13 +3200,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -3222,9 +3222,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -3253,8 +3253,8 @@
       "lights": [
         {
           "object": "过道_射灯_06",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 443.3333,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -3270,13 +3270,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -3287,13 +3287,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -3309,9 +3309,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -3340,32 +3340,32 @@
       "lights": [
         {
           "object": "餐厅_吊顶灯带_灯光_01",
-          "onEnergyBlender": 82.37999725341797,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 239.1667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "餐厅_吊顶灯带_灯光_02",
-          "onEnergyBlender": 82.37999725341797,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 239.1667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "餐厅_吊顶灯带_灯光_03",
-          "onEnergyBlender": 45.962501525878906,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 133.3333,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "餐厅_吊顶灯带_灯光_04",
-          "onEnergyBlender": 45.962501525878906,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 133.3333,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
@@ -3382,13 +3382,13 @@
                 {
                   "node": "自发光",
                   "nodeType": "Emission",
-                  "onStrength": 15,
-                  "offStrength": 0,
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
+                    1.0,
                     0.6800000071525574,
                     0.41999998688697815,
-                    1
+                    1.0
                   ]
                 }
               ]
@@ -3399,13 +3399,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -3421,9 +3421,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -3449,8 +3449,8 @@
       "lights": [
         {
           "object": "餐厅_射灯_01",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2721.6666,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -3466,13 +3466,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -3483,13 +3483,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -3505,9 +3505,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -3536,8 +3536,8 @@
       "lights": [
         {
           "object": "餐厅_射灯_02",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2721.6666,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -3553,13 +3553,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -3570,13 +3570,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -3592,9 +3592,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -3623,8 +3623,8 @@
       "lights": [
         {
           "object": "餐厅_射灯_03",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2721.6666,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -3640,13 +3640,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -3657,13 +3657,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -3679,9 +3679,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -3710,8 +3710,8 @@
       "lights": [
         {
           "object": "餐厅_射灯_04",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2721.6666,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -3727,13 +3727,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -3744,13 +3744,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -3766,9 +3766,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -3797,8 +3797,8 @@
       "lights": [
         {
           "object": "餐厅_射灯_05",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2721.6666,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -3814,13 +3814,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -3831,13 +3831,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -3853,9 +3853,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -3884,128 +3884,128 @@
       "lights": [
         {
           "object": "地台_圆环灯带_灯光_01",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_02",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_03",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_04",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_05",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_06",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_07",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_08",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_09",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_10",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_11",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_12",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_13",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_14",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_15",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
         },
         {
           "object": "地台_圆环灯带_灯光_16",
-          "onEnergyBlender": 26.25,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 175.6667,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "AREA",
           "gltfLightType": "spot",
           "castShadow": true
@@ -4022,13 +4022,13 @@
                 {
                   "node": "自发光",
                   "nodeType": "Emission",
-                  "onStrength": 15,
-                  "offStrength": 0,
+                  "onStrength": 15.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
+                    1.0,
                     0.68,
                     0.42,
-                    1
+                    1.0
                   ]
                 }
               ]
@@ -4039,13 +4039,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -4061,22 +4061,22 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
       "photometric": {
         "ratedPowerW": 46.957625985823384,
         "luminousFluxLm": 3521.821948936754,
-        "ratedPowerPerMeterW": 12,
-        "luminousFluxPerMeterLm": 900,
+        "ratedPowerPerMeterW": 12.0,
+        "luminousFluxPerMeterLm": 900.0,
         "criRaMin": 90,
         "beamAngleDeg": 120,
         "colorTemperatureK": 3500,
         "blenderEnergyScale": 8.944234108572672,
-        "blenderTotalEnergyW": 420,
+        "blenderTotalEnergyW": 420.0,
         "blenderCalibration": "环形区域灯阵列渲染能量降至420W，以减轻过曝；额定灯带功率保持不变"
       },
       "castShadow": true,
@@ -4099,8 +4099,8 @@
       "lights": [
         {
           "object": "客厅_射灯_01",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2711.6665,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -4116,13 +4116,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -4133,13 +4133,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -4155,9 +4155,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -4186,8 +4186,8 @@
       "lights": [
         {
           "object": "客厅_射灯_02",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2711.6665,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -4203,13 +4203,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -4220,13 +4220,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -4242,9 +4242,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -4273,8 +4273,8 @@
       "lights": [
         {
           "object": "客厅_射灯_03",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2711.6665,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -4290,13 +4290,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -4307,13 +4307,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -4329,9 +4329,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -4360,8 +4360,8 @@
       "lights": [
         {
           "object": "客厅_射灯_04",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2711.6665,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -4377,13 +4377,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -4394,13 +4394,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -4416,9 +4416,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -4447,8 +4447,8 @@
       "lights": [
         {
           "object": "客厅_射灯_05",
-          "onEnergyBlender": 420,
-          "offEnergyBlender": 0,
+          "onEnergyBlender": 2711.6665,
+          "offEnergyBlender": 0.0,
           "sourceLightType": "SPOT",
           "gltfLightType": "spot"
         }
@@ -4464,13 +4464,13 @@
                 {
                   "node": "原理化 BSDF",
                   "nodeType": "Principled",
-                  "onStrength": 1,
-                  "offStrength": 0,
+                  "onStrength": 1.0,
+                  "offStrength": 0.0,
                   "color": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                   ]
                 }
               ]
@@ -4481,13 +4481,13 @@
       "commands": {
         "on": {
           "visible": true,
-          "intensityScale": 1,
-          "emissiveIntensityScale": 1
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
         },
         "off": {
           "visible": false,
-          "intensityScale": 0,
-          "emissiveIntensityScale": 0
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
         }
       },
       "capabilities": [
@@ -4503,9 +4503,9 @@
         "step": 1
       },
       "brightness": {
-        "min": 0.03,
-        "max": 1,
-        "default": 1,
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
         "step": 0.01,
         "unit": "normalized"
       },
@@ -4545,9 +4545,9 @@
       "step": 1
     },
     "brightness": {
-      "min": 0.03,
-      "max": 1,
-      "default": 1,
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0,
       "step": 0.01,
       "unit": "normalized"
     },
