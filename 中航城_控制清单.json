@@ -125,40 +125,6 @@
       }
     },
     {
-      "id": "curtain_003",
-      "label": "客厅_金刚纱窗帘_02",
-      "type": "curtain",
-      "legacyAnimationType": "curtain",
-      "mode": "draw",
-      "interaction": "toggle",
-      "states": [
-        "closed",
-        "open"
-      ],
-      "defaultState": "closed",
-      "root": "客厅_金刚纱窗帘_02",
-      "targets": [
-        "客厅_金刚纱窗帘_02_单帘_动画控制"
-      ],
-      "clickTargets": [
-        "客厅_金刚纱窗帘_02_单帘",
-        "客厅_金刚纱窗帘_02_单帘头"
-      ],
-      "clips": {
-        "open": [
-          "THREE_Curtain_003_P0_Open"
-        ],
-        "close": [
-          "THREE_Curtain_003_P0_Close"
-        ]
-      },
-      "playback": {
-        "loop": "once",
-        "clampWhenFinished": true,
-        "durationSeconds": 1.25
-      }
-    },
-    {
       "id": "curtain_004",
       "label": "露台门_金刚纱窗帘",
       "type": "curtain",
