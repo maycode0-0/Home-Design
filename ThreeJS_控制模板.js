@@ -185,9 +185,8 @@ export class HomeDesignControls {
       || (state === "closed" ? control.clips?.close : undefined);
     if (!clipNames) throw new Error(`Animation state ${state} is not defined for ${control.id}`);
 
-    const active = this.activeActions.get(control.id) || new Set();
-    for (const action of active) action.stop();
-    active.clear();
+    const previous = this.activeActions.get(control.id) || new Set();
+    const next = new Set();
 
     for (const clipName of clipNames) {
       const clip = this.clips.get(clipName);
@@ -200,9 +199,21 @@ export class HomeDesignControls {
       action.setLoop(THREE.LoopOnce, 1);
       action.clampWhenFinished = true;
       action.play();
-      active.add(action);
+      next.add(action);
     }
-    this.activeActions.set(control.id, active);
+
+    // Bind the incoming actions before stopping the outgoing ones. AnimationAction.stop()
+    // drops each property binding's useCount, and at zero the mixer calls
+    // PropertyMixer.restoreOriginalState(), writing back the pose captured when that binding
+    // was first activated - the authored closed pose. Stopping first therefore snapped the
+    // object shut before the closing clip had a chance to play, while opening looked fine
+    // because the restored pose and the object's current pose were both "closed".
+    // Playing first keeps useCount above zero across the handover, so no pose is restored.
+    for (const action of previous) {
+      if (!next.has(action)) action.stop();
+    }
+
+    this.activeActions.set(control.id, next);
   }
 
   applyLightState(control, state) {
