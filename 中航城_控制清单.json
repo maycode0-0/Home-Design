@@ -2085,7 +2085,7 @@
       "defaultState": "on",
       "root": "地台_凹槽灯带_灯光交互",
       "clickTargets": [
-        "灯带_发光体_地台凹槽"
+        "地台_凹槽灯带_灯光点击区"
       ],
       "lights": [
         {
@@ -3845,7 +3845,7 @@
       "defaultState": "on",
       "root": "地台_圆环灯带_灯光交互",
       "clickTargets": [
-        "地台_圆环灯带_主体"
+        "地台_圆环灯带_灯光点击区"
       ],
       "lights": [
         {
