@@ -90,7 +90,11 @@ GLB 场景中有一个名为 `ThreeJS_交互控制清单` 的 Empty。其属性�
 
 glTF 不支持 Blender 的 `AREA` 灯。当前 GLB 导出时会将 28 个 AREA 灯临时映射为同方向 SPOT 灯，导出完成后恢复 Blender 中的 AREA 灯，不改变 `.blend` 的原始灯型。
 
-如果需要在 Blender 中重新导出，请运行 Blender Text 数据块 `ThreeJS_导出GLB.py`。导出选项必须保持：
+如果需要在 Blender 中重新导出，请运行 Blender Text 数据块 `ThreeJS_导出GLB.py`。
+
+> 不要用任何会展平层级（Flatten Object Hierarchy）或不导出动画的通用导出入口（包括 MCP 的 `export_scene` 工具）。展平会删掉 `*_动画控制` Empty，把它的缩放烘进网格节点，缩放轴心随之跑到网格节点自身原点上，窗帘开合就会往中间收、方向反转甚至穿墙。
+
+导出选项必须保持：
 
 - Animations：开启
 - Animation Mode：`ACTIONS`
