@@ -1,15 +1,15 @@
 # 中航城 Three.js 交互控制
 
-本目录包含已经配置好窗帘、门窗、推拉门和灯光控制元数据的 Blender/GLB 模型。
+本目录包含窗帘、门窗、推拉门、灯光以及空调出风、浴霸风暖特效的 Blender/GLB 模型和 Three.js 控制器。
 
 ## 输出文件
 
-- `中航城_optimized_灯带_吊顶_凹槽灯带_拓扑修复_窗帘_客厅纱帘_窗帘盒_全屋窗帘盒_地台黑边修复_窗帘柔化_窗帘动画_ThreeJS交互.blend`
+- `中航城.blend`
   - 可继续在 Blender 中编辑。
   - 包含 `ThreeJS_交互控制清单`、`ThreeJS_交互控制清单.json` 和 `ThreeJS_控制模板.js` Text 数据块。
-- `中航城_optimized_灯带_吊顶_凹槽灯带_拓扑修复_窗帘_客厅纱帘_窗帘盒_全屋窗帘盒_地台黑边修复_窗帘柔化_窗帘动画_ThreeJS交互.glb`
+- `中航城.glb`
   - Three.js 推荐加载的模型文件。
-- `中航城_optimized_灯带_吊顶_凹槽灯带_拓扑修复_窗帘_客厅纱帘_窗帘盒_全屋窗帘盒_地台黑边修复_窗帘柔化_窗帘动画_ThreeJS交互_控制清单.json`
+- `中航城_控制清单.json`
   - 与 GLB 内 `userData.threejs_interaction_manifest` 同步的完整控制清单。
 - `ThreeJS_控制模板.js`
   - 可直接复制到 Three.js 项目中的 ES Module 控制器。
@@ -17,11 +17,12 @@
 ## 快速开始
 
 ```js
+import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import HomeDesignControls from "./ThreeJS_控制模板.js";
 
 const loader = new GLTFLoader();
-const gltf = await loader.loadAsync("./中航城_optimized_灯带_吊顶_凹槽灯带_拓扑修复_窗帘_客厅纱帘_窗帘盒_全屋窗帘盒_地台黑边修复_窗帘柔化_窗帘动画_ThreeJS交互.glb");
+const gltf = await loader.loadAsync("./中航城.glb");
 scene.add(gltf.scene);
 
 const controls = HomeDesignControls.fromGLTF(gltf);
@@ -52,17 +53,53 @@ controls.setColorTemperature("light_living_room_ceiling_strip", 4000);
 controls.setBrightness("light_living_room_ceiling_strip", 0.6);
 ```
 
+## 空调出风与浴霸风暖
+
+5 台空调使用浅蓝色流线表示出风；2 台浴霸各有独立的向下吹风流线和橙色扩散热浪。所有特效默认关闭，强度范围为 `0..1`，默认 `0.7`。强度 `0` 隐藏特效但保留开关状态。浴霸吹风和加热可同时开启，不影响原有照明开关。
+
+```js
+controls.setState("effect_ac_living_room_airflow", "on");
+controls.setEffectIntensity("effect_ac_living_room_airflow", 0.8);
+
+controls.setState("effect_primary_bathroom_fan", "on");
+controls.setState("effect_primary_bathroom_heat", "on");
+controls.setEffectIntensity("effect_primary_bathroom_heat", 0.6);
+controls.setState("light_primary_bathroom_heater", "off"); // 照明独立
+
+controls.toggle("effect_primary_bathroom_heat");
+controls.setState("effect_ac_living_room_airflow", "off");
+// 每帧继续调用 controls.update(deltaSeconds)，参数单位为秒。
+// 卸载场景时 controls.dispose() 释放特效网格、材质和交互监听。
+```
+
+| 设备 | 出风 / 吹风 ID | 加热 ID |
+| --- | --- | --- |
+| 主卧空调 | `effect_ac_primary_bedroom_airflow` | — |
+| 次卧空调 | `effect_ac_secondary_bedroom_airflow` | — |
+| 书房空调 | `effect_ac_study_airflow` | — |
+| 客厅空调 | `effect_ac_living_room_airflow` | — |
+| 餐厅空调 | `effect_ac_dining_room_airflow` | — |
+| 主卫浴霸 | `effect_primary_bathroom_fan` | `effect_primary_bathroom_heat` |
+| 次卫浴霸 | `effect_secondary_bathroom_fan` | `effect_secondary_bathroom_heat` |
+
+点击空调切换出风；点击浴霸仍切换照明，吹风和加热通过上述 API 分别控制。特效网格不参与点击检测。
+
+特效参数位于清单的 `effectControls`。Blender 和 GLB 保存风口锚点及控制元数据；动态流线和热浪由本控制器在 Three.js 中生成，Blender 视口和只加载 GLB 的查看器不会播放这些特效。加载时必须同时使用新版控制器，并逐帧调用 `update`。每路特效仅使用一个绘制调用，无需纹理或后处理；关闭后停止更新，重新开启复用资源。锚点 glTF 局部 `+Y` 为出风方向，跟随设备移动和旋转。
+
+交互示例：[examples/device-effects.html](examples/device-effects.html)。在本目录运行 `python -m http.server 8000 --bind 127.0.0.1`，打开 `http://127.0.0.1:8000/examples/device-effects.html`。示例通过 CDN 加载 Three.js 0.180.0，需要网络；可切换设备、视角、照明、特效开关与强度。
+
 ## 控制数量
 
 - 5 组窗帘
 - 6 扇门
 - 9 组窗户
 - 2 组推拉门
-- 34 组灯光开关
+- 44 组灯光开关
 - 30 组射灯/灯带支持色温和亮度调节
 - 4 组吊灯支持开关控制
+- 9 路特效控制（5 路空调出风、2 路浴霸吹风、2 路浴霸加热）
 
-窗帘、门窗和推拉门共包含 64 个 Open/Close 动画片段。所有可交互网格都带有 `threejs_raycastable=true`，可通过 `controls.getRaycastTargets()` 获取。
+导出模型共包含 66 个动画片段。可通过 `controls.getRaycastTargets()` 获取可交互网格；多材质设备由 GLTFLoader 创建为 Group 时，控制器会返回其子网格。
 
 ## 灯光参数
 

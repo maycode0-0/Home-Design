@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>空调与浴霸 · 特效预览</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #182128; color: #edf4f6; font: 14px/1.6 system-ui, sans-serif; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+  aside { position: absolute; top: 24px; left: 24px; padding: 24px; width: 296px; background: #222f37ee; border: 1px solid #45545d; border-radius: 16px; }
+  h1 { margin: 0 0 8px; font-size: 20px; }
+  p { color: #b2c2cb; margin: 0 0 20px; }
+  label { display: block; margin-top: 14px; }
+  select, button { font: inherit; color: inherit; background: #354650; border: 1px solid #617680; border-radius: 7px; padding: 8px; }
+  select { width: 100%; }
+  button { cursor: pointer; }
+  button[aria-pressed="true"] { background: #216675; border-color: #79dbeb; }
+  #switches { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  input { width: 100%; accent-color: #80deff; }
+  #status { margin-top: 18px; font-size: 12px; color: #b2c2cb; }
+  footer { position: absolute; bottom: 20px; left: 24px; color: #b2c2cb; }
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}
+</script>
+<aside>
+  <h1>空调与浴霸</h1>
+  <p>出风流线与加热热浪<br>每个功能独立开关、调节强度</p>
+  <label for="device">设备</label><select id="device" disabled></select>
+  <label for="view">视角</label>
+  <select id="view"><option value="detail">设备近景</option><option value="overhead">设备俯视</option><option value="home">全屋剖视</option></select>
+  <div id="switches"></div>
+  <label for="intensity">特效强度 <output id="value">70%</output></label>
+  <input id="intensity" type="range" min="0" max="100" value="70">
+  <div id="status">正在加载模型…</div>
+</aside>
+<footer>拖动旋转 · 滚轮缩放 · 右键平移</footer>
+<script type="module">
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import HomeDesignControls from "../ThreeJS_控制模板.js";
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color("#182128");
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+document.body.append(renderer.domElement);
+const camera = new THREE.PerspectiveCamera(42, innerWidth / innerHeight, 0.01, 100);
+const orbit = new OrbitControls(camera, renderer.domElement);
+orbit.enableDamping = true;
+scene.add(new THREE.HemisphereLight(0xeaf7ff, 0x737778, 2.5));
+const key = new THREE.DirectionalLight(0xffffff, 2);
+key.position.set(3, 7, 5);
+scene.add(key);
+const deviceSelect = document.querySelector("#device");
+const viewSelect = document.querySelector("#view");
+const switches = document.querySelector("#switches");
+const intensity = document.querySelector("#intensity");
+let controls;
+let gltf;
+let chosen;
+const originalVisibility = new Map();
+
+function focusDevice() {
+  chosen = controls.objects.get(deviceSelect.value);
+  const home = viewSelect.value === "home";
+  gltf.scene.traverse((object) => {
+    if (!object.isMesh || object.name.endsWith("__runtime_effect")) return;
+    let node = object;
+    while (node && node !== chosen) node = node.parent;
+    let ceiling = object;
+    while (ceiling && ceiling.userData.threejs_role !== "ceiling_interior_thickness_visual") ceiling = ceiling.parent;
+    object.visible = originalVisibility.get(object) && (home ? !ceiling : node === chosen);
+  });
+  chosen.updateWorldMatrix(true, true);
+  const center = chosen.getWorldPosition(new THREE.Vector3());
+  const effects = controls.manifest.effectControls.filter((entry) => entry.root === chosen.name);
+  const anchor = controls.objects.get(effects[0].emitter);
+  const axis = new THREE.Vector3(0, 1, 0).transformDirection(anchor.matrixWorld);
+  const target = anchor.getWorldPosition(new THREE.Vector3()).addScaledVector(axis, 0.45);
+  if (home) {
+    orbit.target.set(0, 0.8, 0);
+    camera.position.set(8, 19, 14);
+  } else {
+    orbit.target.copy(target);
+    if (viewSelect.value === "overhead") {
+      camera.position.copy(target).add(new THREE.Vector3(0.35, 4.2, 0.8));
+    } else if (chosen.name.includes("浴霸")) {
+      camera.position.copy(center).add(new THREE.Vector3(1.1, -1.45, 1.6));
+    } else {
+      camera.position.copy(target).addScaledVector(axis, 3.4).add(new THREE.Vector3(0.85, -0.6, 0));
+    }
+  }
+  orbit.update();
+  // Keep active effects on other devices out of a focused view.
+  for (const [id, effect] of controls.effects) {
+    effect.mesh.visible = controls.getState(id) === "on" && controls.effectSettings.get(id).intensity > 0
+      && (home || controls.getControl(id).root === chosen.name);
+  }
+}
+
+function buildSwitches() {
+  switches.replaceChildren();
+  const effectControls = controls.manifest.effectControls.filter((entry) => entry.root === deviceSelect.value);
+  const lightControls = controls.manifest.lightControls.filter((entry) => entry.root === deviceSelect.value);
+  for (const entry of [...effectControls, ...lightControls]) {
+    const button = document.createElement("button");
+    button.textContent = entry.type === "light" ? "照明" : entry.effect === "heat" ? "加热" : "吹风";
+    button.dataset.control = entry.id;
+    button.setAttribute("aria-pressed", controls.getState(entry.id) === "on");
+    button.onclick = () => {
+      controls.toggle(entry.id);
+      button.setAttribute("aria-pressed", controls.getState(entry.id) === "on");
+      focusDevice();
+    };
+    switches.append(button);
+  }
+  const strength = controls.effectSettings.get(effectControls[0].id).intensity;
+  intensity.value = strength * 100;
+  document.querySelector("#value").value = `${Math.round(strength * 100)}%`;
+}
+
+deviceSelect.onchange = () => { focusDevice(); buildSwitches(); };
+viewSelect.onchange = focusDevice;
+intensity.oninput = () => {
+  const value = Number(intensity.value) / 100;
+  for (const entry of controls.manifest.effectControls.filter((entry) => entry.root === chosen.name)) {
+    controls.setEffectIntensity(entry.id, value);
+  }
+  document.querySelector("#value").value = `${intensity.value}%`;
+  focusDevice();
+};
+
+try {
+  gltf = await new GLTFLoader().loadAsync("../中航城.glb");
+  scene.add(gltf.scene);
+  controls = HomeDesignControls.fromGLTF(gltf);
+  // The demo uses daylight and turns only the selected device's light on demand.
+  for (const entry of controls.manifest.lightControls) controls.setState(entry.id, "off");
+  gltf.scene.traverse((object) => originalVisibility.set(object, object.visible));
+  for (const name of new Set(controls.manifest.effectControls.map((entry) => entry.root))) {
+    deviceSelect.add(new Option(name, name));
+  }
+  deviceSelect.value = "客厅空调";
+  deviceSelect.disabled = false;
+  focusDevice();
+  buildSwitches();
+  document.querySelector("#status").textContent = "模型已加载 · 特效默认关闭";
+  // Exposed for integration checks and interactive experiments in DevTools.
+  window.deviceEffectsDemo = { controls, gltf, scene, camera, renderer, focusDevice, orbit };
+} catch (error) {
+  document.querySelector("#status").textContent = `加载失败：${error.message}`;
+  console.error(error);
+}
+const clock = new THREE.Clock();
+renderer.setAnimationLoop(() => {
+  controls?.update(clock.getDelta());
+  orbit.update();
+  renderer.render(scene, camera);
+});
+addEventListener("resize", () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+addEventListener("pagehide", () => { controls?.dispose(); orbit.dispose(); renderer.dispose(); });
+</script>
+</html>

@@ -36,6 +36,108 @@ function colorTemperatureToRGB(kelvin) {
   return [red, green, blue].map((channel) => clamp(channel / 255, 0, 1));
 }
 
+// One draw call per effect, with no textures or postprocessing dependency.
+// Emitters use local +Y for travel, X for width and Z for outlet depth (glTF axes).
+class DeviceEffect {
+  constructor(anchor, control) {
+    this.config = control.visual;
+    this.heat = control.effect === "heat";
+    this.time = 0;
+    this.count = this.heat ? 6 : 24;
+    this.segments = this.heat ? 48 : 10;
+    const vertexCount = this.count * (this.segments + 1) * 4;
+    this.positions = new Float32Array(vertexCount * 3);
+    this.colors = new Float32Array(vertexCount * 3);
+    const indices = [];
+    for (let i = 0; i < this.count; i += 1) {
+      for (let j = 0; j < this.segments; j += 1) {
+        const a = (i * (this.segments + 1) + j) * 4;
+        for (const side of [0, 2]) {
+          indices.push(a + side, a + side + 1, a + side + 4,
+            a + side + 1, a + side + 5, a + side + 4);
+        }
+      }
+    }
+    this.geometry = new THREE.BufferGeometry();
+    this.geometry.setAttribute("position", new THREE.BufferAttribute(this.positions, 3).setUsage(THREE.DynamicDrawUsage));
+    this.geometry.setAttribute("color", new THREE.BufferAttribute(this.colors, 3).setUsage(THREE.DynamicDrawUsage));
+    this.geometry.setIndex(indices);
+    const { width, depth, length, spread } = this.config;
+    this.geometry.boundingSphere = new THREE.Sphere(
+      new THREE.Vector3(0, length / 2, 0), width + depth + length + spread,
+    );
+    this.material = new THREE.MeshBasicMaterial({
+      color: this.config.color,
+      vertexColors: true,
+      transparent: true,
+      opacity: this.config.opacity,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      side: THREE.DoubleSide,
+      toneMapped: false,
+    });
+    this.mesh = new THREE.Mesh(this.geometry, this.material);
+    this.mesh.name = `${control.id}__runtime_effect`;
+    this.mesh.userData.threejs_raycastable = false;
+    this.mesh.raycast = () => {};
+    this.mesh.visible = false;
+    anchor.add(this.mesh);
+  }
+
+  update(deltaSeconds, intensity) {
+    if (!this.mesh.visible || intensity <= 0) return;
+    const { width, depth, length, spread, speed } = this.config;
+    // Wrap the phase to retain precision in long-running dashboards.
+    this.time = (this.time + deltaSeconds * speed * (0.35 + intensity * 0.65) / length) % 1;
+    this.material.opacity = this.config.opacity * intensity;
+    for (let i = 0; i < this.count; i += 1) {
+      const phase = (this.time + i / this.count) % 1;
+      const seed = i * 2.3999632297;
+      const laneX = ((i * 0.61803398875) % 1 - 0.5) * width;
+      const laneZ = ((i * 0.38196601125) % 1 - 0.5) * depth;
+      for (let j = 0; j <= this.segments; j += 1) {
+        const t = j / this.segments;
+        const p = this.heat ? phase : clamp(phase - t * 0.22, 0, 1);
+        const fade = Math.sin(p * Math.PI) * (this.heat ? 0.65 : Math.sin(t * Math.PI));
+        let x;
+        let z;
+        let radius;
+        if (this.heat) {
+          const angle = t * Math.PI * 2;
+          x = Math.cos(angle) * (width / 2 + p * spread);
+          z = Math.sin(angle) * (depth / 2 + p * spread);
+          radius = 0.004 + (1 - p) * 0.003;
+        } else {
+          x = laneX * (1 + p * spread) + Math.sin(seed + p * 5) * 0.035 * p;
+          z = laneZ * (1 + p * spread) + Math.cos(seed + p * 4) * 0.022 * p;
+          radius = 0.005 * Math.sin(t * Math.PI);
+        }
+        const y = p * length;
+        const offset = (i * (this.segments + 1) + j) * 12;
+        // Crossed ribbons keep the streams visible from overhead and interior views.
+        for (let k = 0; k < 4; k += 1) {
+          const v = offset + k * 3;
+          const sign = k % 2 === 0 ? -1 : 1;
+          this.positions[v] = x + (k < 2 ? sign * radius : 0);
+          this.positions[v + 1] = y + (this.heat && k >= 2 ? sign * radius : 0);
+          this.positions[v + 2] = z + (!this.heat && k >= 2 ? sign * radius : 0);
+          this.colors[v] = fade;
+          this.colors[v + 1] = fade;
+          this.colors[v + 2] = fade;
+        }
+      }
+    }
+    this.geometry.attributes.position.needsUpdate = true;
+    this.geometry.attributes.color.needsUpdate = true;
+  }
+
+  dispose() {
+    this.mesh.removeFromParent();
+    this.geometry.dispose();
+    this.material.dispose();
+  }
+}
+
 export class HomeDesignControls {
   constructor({ root, animations = [], manifest }) {
     if (!root) throw new Error("HomeDesignControls requires a GLTF scene root");
@@ -54,6 +156,8 @@ export class HomeDesignControls {
     this.lightCache = new Map();
     this.emissiveCache = new Map();
     this.lightSettings = new Map();
+    this.effectSettings = new Map();
+    this.effects = new Map();
     this.raycaster = new THREE.Raycaster();
     this.pointer = new THREE.Vector2();
     this.pointerHandler = null;
@@ -65,7 +169,7 @@ export class HomeDesignControls {
       }
     });
 
-    for (const control of [...manifest.animationControls, ...manifest.lightControls]) {
+    for (const control of [...manifest.animationControls, ...manifest.lightControls, ...(manifest.effectControls || [])]) {
       this.controls.set(control.id, control);
       this.states.set(control.id, control.defaultState);
       if (control.type === "light") {
@@ -74,12 +178,18 @@ export class HomeDesignControls {
           colorTemperatureK: control.colorTemperatureK?.default ?? null,
         });
       }
+      if (control.type === "effect") {
+        this.effectSettings.set(control.id, { intensity: control.intensity?.default ?? 0.7 });
+      }
     }
 
     // GLB light nodes start visible. Apply manifest defaults before the first render
     // so controls with a default "off" state do not flash on screen.
     for (const control of manifest.lightControls) {
       this.applyLightState(control, this.states.get(control.id));
+    }
+    for (const control of manifest.effectControls || []) {
+      this.applyEffectState(control, this.states.get(control.id));
     }
   }
 
@@ -117,7 +227,7 @@ export class HomeDesignControls {
   toggle(id) {
     const control = this.getControl(id);
     const current = this.states.get(id);
-    const next = control.type === "light"
+    const next = control.type === "light" || control.type === "effect"
       ? (current === "on" ? "off" : "on")
       : (current === "open" ? "closed" : "open");
     return this.setState(id, next);
@@ -125,15 +235,43 @@ export class HomeDesignControls {
 
   setState(id, state) {
     const control = this.getControl(id);
-    const allowed = control.states || (control.type === "light" ? ["off", "on"] : ["closed", "open"]);
+    const allowed = control.states || (["light", "effect"].includes(control.type) ? ["off", "on"] : ["closed", "open"]);
     if (!allowed.includes(state)) {
       throw new Error(`Invalid state ${state} for ${id}; expected ${allowed.join(", ")}`);
     }
 
-    this.states.set(id, state);
     if (control.type === "light") this.applyLightState(control, state);
+    else if (control.type === "effect") this.applyEffectState(control, state);
     else this.playAnimationState(control, state);
+    this.states.set(id, state);
     return state;
+  }
+
+  setEffectIntensity(id, value) {
+    const control = this.getControl(id);
+    if (control.type !== "effect") throw new Error(`Effect intensity is not supported by ${id}`);
+    if (!Number.isFinite(value)) throw new Error("Effect intensity must be a finite number");
+    const range = control.intensity || { min: 0, max: 1 };
+    const settings = this.effectSettings.get(id);
+    settings.intensity = clamp(value, range.min, range.max);
+    this.applyEffectState(control, this.states.get(id));
+    return settings.intensity;
+  }
+
+  applyEffectState(control, state) {
+    const intensity = this.effectSettings.get(control.id).intensity;
+    const visible = state === "on" && intensity > 0;
+    let effect = this.effects.get(control.id);
+    if (!effect && visible) {
+      const anchor = this.objects.get(control.emitter);
+      if (!anchor) throw new Error(`Missing effect emitter ${control.emitter} for ${control.id}`);
+      effect = new DeviceEffect(anchor, control);
+      this.effects.set(control.id, effect);
+    }
+    if (effect) {
+      effect.mesh.visible = visible;
+      effect.update(0, intensity);
+    }
   }
 
   setBrightness(id, value) {
@@ -274,9 +412,16 @@ export class HomeDesignControls {
     for (const control of this.controls.values()) {
       for (const name of control.clickTargets || []) names.add(name);
     }
-    return [...names]
-      .map((name) => this.objects.get(name))
-      .filter((object) => object?.isMesh && object.userData?.threejs_raycastable === true);
+    const targets = new Set();
+    for (const name of names) {
+      const object = this.objects.get(name);
+      if (object?.userData?.threejs_raycastable !== true) continue;
+      // GLTFLoader represents a Blender mesh with several materials as a Group.
+      object.traverse((child) => {
+        if (child.isMesh && child.userData?.threejs_raycastable !== false) targets.add(child);
+      });
+    }
+    return [...targets];
   }
 
   controlIdFromObject(object) {
@@ -319,7 +464,11 @@ export class HomeDesignControls {
   }
 
   update(deltaSeconds) {
+    if (!Number.isFinite(deltaSeconds) || deltaSeconds < 0) return;
     this.mixer.update(deltaSeconds);
+    for (const [id, effect] of this.effects) {
+      effect.update(deltaSeconds, this.effectSettings.get(id).intensity);
+    }
   }
 
   dispose() {
@@ -328,6 +477,9 @@ export class HomeDesignControls {
       for (const action of actions) action.stop();
     }
     this.mixer.stopAllAction();
+    for (const effect of this.effects.values()) effect.dispose();
+    this.effects.clear();
+    this.mixer.uncacheRoot(this.root);
   }
 }
 

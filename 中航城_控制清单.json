@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "schema": "home-design-threejs-controls",
   "runtime": "three.js",
   "fps": 24.0,
@@ -4482,14 +4482,531 @@
         "beamAngleDeg": 32,
         "rotationRangeDeg": 30
       }
+    },
+    {
+      "id": "light_primary_bathroom_heater",
+      "label": "主卫浴霸",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卫浴霸",
+      "clickTargets": [
+        "主卫浴霸_嵌入机身",
+        "主卫浴霸_白色面框",
+        "主卫浴霸_铝边内框",
+        "主卫浴霸_照明面板",
+        "主卫浴霸_风口底板",
+        "主卫浴霸_导风栅_01",
+        "主卫浴霸_导风栅_02",
+        "主卫浴霸_导风栅_03",
+        "主卫浴霸_导风栅_04",
+        "主卫浴霸_导风栅_05",
+        "主卫浴霸_导风栅_06",
+        "主卫浴霸_导风栅_07",
+        "主卫浴霸_导风栅_08",
+        "主卫浴霸_导风栅_09",
+        "主卫浴霸_导风栅_10"
+      ],
+      "lights": [
+        {
+          "object": "主卫浴霸_灯光",
+          "onEnergyBlender": 22.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卫浴霸_照明面板",
+          "materials": [
+            {
+              "material": "主卫浴霸_4000K柔光面板",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 3.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.78,
+                    0.6,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle"
+      ],
+      "adjustable": false
+    },
+    {
+      "id": "light_secondary_bathroom_heater",
+      "label": "次卫浴霸",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "次卫浴霸",
+      "clickTargets": [
+        "次卫浴霸_嵌入机身",
+        "次卫浴霸_白色面框",
+        "次卫浴霸_铝边内框",
+        "次卫浴霸_照明面板",
+        "次卫浴霸_风口底板",
+        "次卫浴霸_导风栅_01",
+        "次卫浴霸_导风栅_02",
+        "次卫浴霸_导风栅_03",
+        "次卫浴霸_导风栅_04",
+        "次卫浴霸_导风栅_05",
+        "次卫浴霸_导风栅_06",
+        "次卫浴霸_导风栅_07",
+        "次卫浴霸_导风栅_08",
+        "次卫浴霸_导风栅_09",
+        "次卫浴霸_导风栅_10"
+      ],
+      "lights": [
+        {
+          "object": "次卫浴霸_灯光",
+          "onEnergyBlender": 22.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "次卫浴霸_照明面板",
+          "materials": [
+            {
+              "material": "次卫浴霸_4000K柔光面板",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 3.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.78,
+                    0.6,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle"
+      ],
+      "adjustable": false
+    },
+    {
+      "id": "light_primary_bathroom_mirror",
+      "label": "主卫镜灯",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "主卫镜灯",
+      "clickTargets": [
+        "主卫镜灯_镜面"
+      ],
+      "lights": [
+        {
+          "object": "主卫镜灯_柔光_01",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_02",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_03",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_04",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_05",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_06",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_07",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_08",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_09",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_10",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_11",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_12",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_13",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_14",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "主卫镜灯_柔光_15",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "主卫镜灯_圆弧发光罩",
+          "materials": [
+            {
+              "material": "主卫镜灯_镜后4000K闭环灯带",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 8.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.78,
+                    0.6,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle"
+      ],
+      "adjustable": false
+    },
+    {
+      "id": "light_secondary_bathroom_mirror",
+      "label": "次卫镜灯",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "次卫镜灯",
+      "clickTargets": [
+        "次卫镜灯_镜面"
+      ],
+      "lights": [
+        {
+          "object": "次卫镜灯_柔光_01",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_02",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_03",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_04",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_05",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_06",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_07",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_08",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_09",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_10",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_11",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_12",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_13",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_14",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        },
+        {
+          "object": "次卫镜灯_柔光_15",
+          "onEnergyBlender": 0.22,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "AREA",
+          "gltfLightType": "spot",
+          "castShadow": true
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "次卫镜灯_圆弧发光罩",
+          "materials": [
+            {
+              "material": "次卫镜灯_镜后4000K闭环灯带",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 8.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.78,
+                    0.6,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle"
+      ],
+      "adjustable": false
     }
   ],
   "runtimeContract": {
     "animations": "按 clips.open / clips.close 查找 glTF animations；同组 clip 同步播放，LoopOnce 并 clampWhenFinished。",
     "lights": "加载后缓存每个 THREE.Light.intensity 和发光材质 emissiveIntensity；off 设 visible=false、intensity=0、emissiveIntensity=0，on 恢复缓存值。",
     "raycast": "仅将 userData.threejs_raycastable === true 的 Mesh 加入交互射线检测。",
-    "export": "使用内置 ThreeJS_导出GLB.py：AREA 灯在导出期间临时映射为同方向 SPOT，使 57 盏灯全部进入 KHR_lights_punctual；导出后恢复 Blender AREA 灯。",
-    "lightAdjustments": "仅对 capabilities 包含 brightness/color_temperature 的射灯和灯带调用 setBrightness(id, 0.03..1.0) 与 setColorTemperature(id, 2700..6500)。亮度按加载后的原始 intensity/emissiveIntensity 比例调整。"
+    "export": "使用内置 ThreeJS_导出GLB.py：AREA 灯在导出期间临时映射为同方向 SPOT，使 78 盏灯全部进入 KHR_lights_punctual；导出后恢复 Blender AREA 灯。",
+    "lightAdjustments": "仅对 capabilities 包含 brightness/color_temperature 的射灯和灯带调用 setBrightness(id, 0.03..1.0) 与 setColorTemperature(id, 2700..6500)。亮度按加载后的原始 intensity/emissiveIntensity 比例调整。",
+    "effects": "使用 ThreeJS_控制模板.js 的 setState(id, on/off)、toggle(id)、setEffectIntensity(id, 0..1)。逐帧调用 update(deltaSeconds)，单位秒；特效默认关闭，独立于照明，浴霸吹风与加热可同时开启。流线和热浪在运行时生成，锚点局部 +Y 为 glTF 出风方向；无需纹理、Bloom 或额外动画片段。"
   },
   "exportProfile": {
     "format": "GLB",
@@ -4525,5 +5042,332 @@
       "rotationRangeDeg": 30
     },
     "notes": "保持 Blender 当前默认暖白外观；Three.js 调整时同步 Light.color、Light.intensity 和 emissiveIntensity。"
-  }
+  },
+  "effectControls": [
+    {
+      "id": "effect_ac_primary_bedroom_airflow",
+      "label": "主卧空调出风",
+      "type": "effect",
+      "effect": "airflow",
+      "root": "主卧空调",
+      "emitter": "主卧空调_出风特效锚点",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "off",
+      "clickTargets": [
+        "主卧空调"
+      ],
+      "capabilities": [
+        "toggle",
+        "intensity"
+      ],
+      "intensity": {
+        "min": 0,
+        "max": 1,
+        "default": 0.7,
+        "unit": "normalized"
+      },
+      "visual": {
+        "width": 1.42,
+        "depth": 0.09,
+        "length": 1.35,
+        "spread": 0.45,
+        "speed": 0.8,
+        "color": "#80deff",
+        "opacity": 0.85
+      },
+      "runtime": "procedural_mesh"
+    },
+    {
+      "id": "effect_ac_secondary_bedroom_airflow",
+      "label": "次卧空调出风",
+      "type": "effect",
+      "effect": "airflow",
+      "root": "次卧空调",
+      "emitter": "次卧空调_出风特效锚点",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "off",
+      "clickTargets": [
+        "次卧空调"
+      ],
+      "capabilities": [
+        "toggle",
+        "intensity"
+      ],
+      "intensity": {
+        "min": 0,
+        "max": 1,
+        "default": 0.7,
+        "unit": "normalized"
+      },
+      "visual": {
+        "width": 1.0200000238418578,
+        "depth": 0.09,
+        "length": 1.35,
+        "spread": 0.45,
+        "speed": 0.8,
+        "color": "#80deff",
+        "opacity": 0.85
+      },
+      "runtime": "procedural_mesh"
+    },
+    {
+      "id": "effect_ac_study_airflow",
+      "label": "书房空调出风",
+      "type": "effect",
+      "effect": "airflow",
+      "root": "书房空调",
+      "emitter": "书房空调_出风特效锚点",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "off",
+      "clickTargets": [
+        "书房空调"
+      ],
+      "capabilities": [
+        "toggle",
+        "intensity"
+      ],
+      "intensity": {
+        "min": 0,
+        "max": 1,
+        "default": 0.7,
+        "unit": "normalized"
+      },
+      "visual": {
+        "width": 1.0200000238418578,
+        "depth": 0.09,
+        "length": 1.35,
+        "spread": 0.45,
+        "speed": 0.8,
+        "color": "#80deff",
+        "opacity": 0.85
+      },
+      "runtime": "procedural_mesh"
+    },
+    {
+      "id": "effect_ac_living_room_airflow",
+      "label": "客厅空调出风",
+      "type": "effect",
+      "effect": "airflow",
+      "root": "客厅空调",
+      "emitter": "客厅空调_出风特效锚点",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "off",
+      "clickTargets": [
+        "客厅空调"
+      ],
+      "capabilities": [
+        "toggle",
+        "intensity"
+      ],
+      "intensity": {
+        "min": 0,
+        "max": 1,
+        "default": 0.7,
+        "unit": "normalized"
+      },
+      "visual": {
+        "width": 1.92,
+        "depth": 0.09,
+        "length": 1.35,
+        "spread": 0.45,
+        "speed": 0.8,
+        "color": "#80deff",
+        "opacity": 0.85
+      },
+      "runtime": "procedural_mesh"
+    },
+    {
+      "id": "effect_ac_dining_room_airflow",
+      "label": "餐厅空调出风",
+      "type": "effect",
+      "effect": "airflow",
+      "root": "餐厅空调",
+      "emitter": "餐厅空调_出风特效锚点",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "off",
+      "clickTargets": [
+        "餐厅空调"
+      ],
+      "capabilities": [
+        "toggle",
+        "intensity"
+      ],
+      "intensity": {
+        "min": 0,
+        "max": 1,
+        "default": 0.7,
+        "unit": "normalized"
+      },
+      "visual": {
+        "width": 1.42,
+        "depth": 0.09,
+        "length": 1.35,
+        "spread": 0.45,
+        "speed": 0.8,
+        "color": "#80deff",
+        "opacity": 0.85
+      },
+      "runtime": "procedural_mesh"
+    },
+    {
+      "id": "effect_primary_bathroom_fan",
+      "label": "主卫浴霸吹风",
+      "type": "effect",
+      "effect": "airflow",
+      "root": "主卫浴霸",
+      "emitter": "主卫浴霸_风暖特效锚点",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "off",
+      "clickTargets": [],
+      "capabilities": [
+        "toggle",
+        "intensity"
+      ],
+      "intensity": {
+        "min": 0,
+        "max": 1,
+        "default": 0.7,
+        "unit": "normalized"
+      },
+      "visual": {
+        "width": 0.14,
+        "depth": 0.22,
+        "length": 0.8,
+        "spread": 0.45,
+        "speed": 0.8,
+        "color": "#80deff",
+        "opacity": 0.85
+      },
+      "runtime": "procedural_mesh"
+    },
+    {
+      "id": "effect_primary_bathroom_heat",
+      "label": "主卫浴霸加热",
+      "type": "effect",
+      "effect": "heat",
+      "root": "主卫浴霸",
+      "emitter": "主卫浴霸_风暖特效锚点",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "off",
+      "clickTargets": [],
+      "capabilities": [
+        "toggle",
+        "intensity"
+      ],
+      "intensity": {
+        "min": 0,
+        "max": 1,
+        "default": 0.7,
+        "unit": "normalized"
+      },
+      "visual": {
+        "width": 0.14,
+        "depth": 0.22,
+        "length": 0.75,
+        "spread": 0.28,
+        "speed": 0.32,
+        "color": "#ff963e",
+        "opacity": 0.8
+      },
+      "runtime": "procedural_mesh"
+    },
+    {
+      "id": "effect_secondary_bathroom_fan",
+      "label": "次卫浴霸吹风",
+      "type": "effect",
+      "effect": "airflow",
+      "root": "次卫浴霸",
+      "emitter": "次卫浴霸_风暖特效锚点",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "off",
+      "clickTargets": [],
+      "capabilities": [
+        "toggle",
+        "intensity"
+      ],
+      "intensity": {
+        "min": 0,
+        "max": 1,
+        "default": 0.7,
+        "unit": "normalized"
+      },
+      "visual": {
+        "width": 0.14,
+        "depth": 0.22,
+        "length": 0.8,
+        "spread": 0.45,
+        "speed": 0.8,
+        "color": "#80deff",
+        "opacity": 0.85
+      },
+      "runtime": "procedural_mesh"
+    },
+    {
+      "id": "effect_secondary_bathroom_heat",
+      "label": "次卫浴霸加热",
+      "type": "effect",
+      "effect": "heat",
+      "root": "次卫浴霸",
+      "emitter": "次卫浴霸_风暖特效锚点",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "off",
+      "clickTargets": [],
+      "capabilities": [
+        "toggle",
+        "intensity"
+      ],
+      "intensity": {
+        "min": 0,
+        "max": 1,
+        "default": 0.7,
+        "unit": "normalized"
+      },
+      "visual": {
+        "width": 0.14,
+        "depth": 0.22,
+        "length": 0.75,
+        "spread": 0.28,
+        "speed": 0.32,
+        "color": "#ff963e",
+        "opacity": 0.8
+      },
+      "runtime": "procedural_mesh"
+    }
+  ]
 }
