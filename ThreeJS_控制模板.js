@@ -41,10 +41,9 @@ function colorTemperatureToRGB(kelvin) {
 class DeviceEffect {
   constructor(anchor, control) {
     this.config = control.visual;
-    this.heat = control.effect === "heat";
     this.time = 0;
-    this.count = this.heat ? 6 : 24;
-    this.segments = this.heat ? 48 : 10;
+    this.count = 24;
+    this.segments = 10;
     const vertexCount = this.count * (this.segments + 1) * 4;
     this.positions = new Float32Array(vertexCount * 3);
     this.colors = new Float32Array(vertexCount * 3);
@@ -97,21 +96,11 @@ class DeviceEffect {
       const laneZ = ((i * 0.38196601125) % 1 - 0.5) * depth;
       for (let j = 0; j <= this.segments; j += 1) {
         const t = j / this.segments;
-        const p = this.heat ? phase : clamp(phase - t * 0.22, 0, 1);
-        const fade = Math.sin(p * Math.PI) * (this.heat ? 0.65 : Math.sin(t * Math.PI));
-        let x;
-        let z;
-        let radius;
-        if (this.heat) {
-          const angle = t * Math.PI * 2;
-          x = Math.cos(angle) * (width / 2 + p * spread);
-          z = Math.sin(angle) * (depth / 2 + p * spread);
-          radius = 0.004 + (1 - p) * 0.003;
-        } else {
-          x = laneX * (1 + p * spread) + Math.sin(seed + p * 5) * 0.035 * p;
-          z = laneZ * (1 + p * spread) + Math.cos(seed + p * 4) * 0.022 * p;
-          radius = 0.005 * Math.sin(t * Math.PI);
-        }
+        const p = clamp(phase - t * 0.22, 0, 1);
+        const fade = Math.sin(p * Math.PI) * Math.sin(t * Math.PI);
+        const x = laneX * (1 + p * spread) + Math.sin(seed + p * 5) * 0.035 * p;
+        const z = laneZ * (1 + p * spread) + Math.cos(seed + p * 4) * 0.022 * p;
+        const radius = 0.005 * Math.sin(t * Math.PI);
         const y = p * length;
         const offset = (i * (this.segments + 1) + j) * 12;
         // Crossed ribbons keep the streams visible from overhead and interior views.
@@ -119,8 +108,8 @@ class DeviceEffect {
           const v = offset + k * 3;
           const sign = k % 2 === 0 ? -1 : 1;
           this.positions[v] = x + (k < 2 ? sign * radius : 0);
-          this.positions[v + 1] = y + (this.heat && k >= 2 ? sign * radius : 0);
-          this.positions[v + 2] = z + (!this.heat && k >= 2 ? sign * radius : 0);
+          this.positions[v + 1] = y;
+          this.positions[v + 2] = z + (k >= 2 ? sign * radius : 0);
           this.colors[v] = fade;
           this.colors[v + 1] = fade;
           this.colors[v + 2] = fade;
@@ -129,6 +118,86 @@ class DeviceEffect {
     }
     this.geometry.attributes.position.needsUpdate = true;
     this.geometry.attributes.color.needsUpdate = true;
+  }
+
+  dispose() {
+    this.mesh.removeFromParent();
+    this.geometry.dispose();
+    this.material.dispose();
+  }
+}
+
+// The authored surface is clipped to the tile footprint, including room cutouts.
+// Coordinates are local to the tile object in glTF axes, so the effect follows it.
+class FloorHeatingEffect {
+  constructor(anchor, control) {
+    const { surface, visual } = control;
+    if (!surface?.positions?.length || surface.positions.length % 9 !== 0
+      || !surface.positions.every(Number.isFinite)) {
+      throw new Error(`Invalid floor heating surface for ${control.id}`);
+    }
+    this.time = 0;
+    this.config = visual;
+    this.geometry = new THREE.BufferGeometry();
+    this.geometry.setAttribute("position", new THREE.Float32BufferAttribute(surface.positions, 3));
+    this.geometry.computeBoundingSphere();
+    this.material = new THREE.ShaderMaterial({
+      uniforms: {
+        time: { value: 0 },
+        strength: { value: 0 },
+        opacity: { value: visual.opacity },
+        spacing: { value: visual.spacing },
+        warmColor: { value: new THREE.Color(visual.color) },
+        hotColor: { value: new THREE.Color(visual.highlightColor) },
+      },
+      vertexShader: `
+        varying vec2 floorPosition;
+        void main() {
+          floorPosition = position.xz;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform float time;
+        uniform float strength;
+        uniform float opacity;
+        uniform float spacing;
+        uniform vec3 warmColor;
+        uniform vec3 hotColor;
+        varying vec2 floorPosition;
+        void main() {
+          vec2 p = floorPosition;
+          float wave = sin(p.x * 1.7) * spacing * 0.16;
+          float lane = (p.y + wave) / spacing;
+          float distanceToLine = abs(fract(lane + 0.5) - 0.5) * spacing;
+          float pipe = 1.0 - smoothstep(0.012, 0.040, distanceToLine);
+          float glow = 1.0 - smoothstep(0.025, spacing * 0.42, distanceToLine);
+          float direction = mod(floor(lane + 0.5), 2.0) * 2.0 - 1.0;
+          float flow = pow(0.5 + 0.5 * sin(p.x * 3.8 * direction - time * 3.0), 5.0);
+          float pulse = 0.5 + 0.5 * sin(p.x * 0.75 + p.y * 0.6 - time);
+          float alpha = (0.08 + 0.07 * pulse + glow * 0.14
+            + pipe * (0.32 + flow * 0.42)) * opacity * strength;
+          gl_FragColor = vec4(mix(warmColor, hotColor, pipe * flow * 0.8), alpha);
+          #include <colorspace_fragment>
+        }
+      `,
+      transparent: true,
+      depthWrite: false,
+      toneMapped: false,
+    });
+    this.mesh = new THREE.Mesh(this.geometry, this.material);
+    this.mesh.name = `${control.id}__runtime_effect`;
+    this.mesh.userData.threejs_raycastable = false;
+    this.mesh.raycast = () => {};
+    this.mesh.visible = false;
+    anchor.add(this.mesh);
+  }
+
+  update(deltaSeconds, intensity) {
+    if (!this.mesh.visible || intensity <= 0) return;
+    this.time = (this.time + deltaSeconds * this.config.speed * (0.35 + intensity * 0.65)) % (Math.PI * 2);
+    this.material.uniforms.time.value = this.time;
+    this.material.uniforms.strength.value = intensity;
   }
 
   dispose() {
@@ -169,7 +238,8 @@ export class HomeDesignControls {
       }
     });
 
-    for (const control of [...manifest.animationControls, ...manifest.lightControls, ...(manifest.effectControls || [])]) {
+    for (const control of [...manifest.animationControls, ...manifest.lightControls,
+      ...(manifest.effectControls || []), ...(manifest.effectGroups || [])]) {
       this.controls.set(control.id, control);
       this.states.set(control.id, control.defaultState);
       if (control.type === "light") {
@@ -179,7 +249,19 @@ export class HomeDesignControls {
         });
       }
       if (control.type === "effect") {
-        this.effectSettings.set(control.id, { intensity: control.intensity?.default ?? 0.7 });
+        if (control.modes && !Object.hasOwn(control.modes, control.defaultMode)) {
+          throw new Error(`Invalid default effect mode for ${control.id}`);
+        }
+        this.effectSettings.set(control.id, {
+          intensity: control.intensity?.default ?? 0.7,
+          mode: control.defaultMode ?? null,
+        });
+      }
+    }
+
+    for (const group of manifest.effectGroups || []) {
+      if (!group.members?.length || group.members.some((id) => this.controls.get(id)?.type !== "effect")) {
+        throw new Error(`Invalid effect group members for ${group.id}`);
       }
     }
 
@@ -220,14 +302,18 @@ export class HomeDesignControls {
   }
 
   getState(id) {
-    this.getControl(id);
+    const control = this.getControl(id);
+    // A partially enabled group is on; toggling it switches every member off.
+    if (control.type === "effect_group") {
+      return control.members.some((member) => this.getState(member) === "on") ? "on" : "off";
+    }
     return this.states.get(id);
   }
 
   toggle(id) {
     const control = this.getControl(id);
-    const current = this.states.get(id);
-    const next = control.type === "light" || control.type === "effect"
+    const current = this.getState(id);
+    const next = ["light", "effect", "effect_group"].includes(control.type)
       ? (current === "on" ? "off" : "on")
       : (current === "open" ? "closed" : "open");
     return this.setState(id, next);
@@ -235,12 +321,14 @@ export class HomeDesignControls {
 
   setState(id, state) {
     const control = this.getControl(id);
-    const allowed = control.states || (["light", "effect"].includes(control.type) ? ["off", "on"] : ["closed", "open"]);
+    const allowed = control.states || (["light", "effect", "effect_group"].includes(control.type) ? ["off", "on"] : ["closed", "open"]);
     if (!allowed.includes(state)) {
       throw new Error(`Invalid state ${state} for ${id}; expected ${allowed.join(", ")}`);
     }
 
-    if (control.type === "light") this.applyLightState(control, state);
+    if (control.type === "effect_group") {
+      for (const member of control.members) this.setState(member, state);
+    } else if (control.type === "light") this.applyLightState(control, state);
     else if (control.type === "effect") this.applyEffectState(control, state);
     else this.playAnimationState(control, state);
     this.states.set(id, state);
@@ -249,26 +337,53 @@ export class HomeDesignControls {
 
   setEffectIntensity(id, value) {
     const control = this.getControl(id);
-    if (control.type !== "effect") throw new Error(`Effect intensity is not supported by ${id}`);
+    if (!["effect", "effect_group"].includes(control.type)) throw new Error(`Effect intensity is not supported by ${id}`);
     if (!Number.isFinite(value)) throw new Error("Effect intensity must be a finite number");
     const range = control.intensity || { min: 0, max: 1 };
+    if (control.type === "effect_group") {
+      const intensity = clamp(value, range.min, range.max);
+      for (const member of control.members) this.setEffectIntensity(member, intensity);
+      return intensity;
+    }
     const settings = this.effectSettings.get(id);
     settings.intensity = clamp(value, range.min, range.max);
     this.applyEffectState(control, this.states.get(id));
     return settings.intensity;
   }
 
+  getEffectMode(id) {
+    const control = this.getControl(id);
+    if (control.type !== "effect" || !control.modes) {
+      throw new Error(`Effect mode is not supported by ${id}`);
+    }
+    return this.effectSettings.get(id).mode;
+  }
+
+  setEffectMode(id, mode) {
+    const control = this.getControl(id);
+    this.getEffectMode(id);
+    if (typeof mode !== "string" || !Object.hasOwn(control.modes, mode)) {
+      throw new Error(`Invalid effect mode ${mode} for ${id}; expected ${Object.keys(control.modes).join(", ")}`);
+    }
+    this.effectSettings.get(id).mode = mode;
+    this.applyEffectState(control, this.states.get(id));
+    return mode;
+  }
+
   applyEffectState(control, state) {
-    const intensity = this.effectSettings.get(control.id).intensity;
+    const { intensity, mode } = this.effectSettings.get(control.id);
     const visible = state === "on" && intensity > 0;
     let effect = this.effects.get(control.id);
     if (!effect && visible) {
       const anchor = this.objects.get(control.emitter);
       if (!anchor) throw new Error(`Missing effect emitter ${control.emitter} for ${control.id}`);
-      effect = new DeviceEffect(anchor, control);
+      effect = control.effect === "floor_heating"
+        ? new FloorHeatingEffect(anchor, control)
+        : new DeviceEffect(anchor, control);
       this.effects.set(control.id, effect);
     }
     if (effect) {
+      if (control.modes) effect.material.color.set(control.modes[mode].color);
       effect.mesh.visible = visible;
       effect.update(0, intensity);
     }

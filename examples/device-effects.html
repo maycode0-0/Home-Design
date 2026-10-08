@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>空调与浴霸 · 特效预览</title>
+<title>空调、浴霸与地暖 · 特效预览</title>
 <style>
   * { box-sizing: border-box; }
   body { margin: 0; background: #182128; color: #edf4f6; font: 14px/1.6 system-ui, sans-serif; }
@@ -24,14 +24,17 @@
 {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}
 </script>
 <aside>
-  <h1>空调与浴霸</h1>
-  <p>出风流线与加热热浪<br>每个功能独立开关、调节强度</p>
+  <h1>空调、浴霸与地暖</h1>
+  <p>冷暖风流线 · 地暖热纹<br>独立开关、可调强度</p>
   <label for="device">设备</label><select id="device" disabled></select>
+  <div id="mode-field" hidden>
+    <label for="mode">空调模式</label><select id="mode" disabled></select>
+  </div>
   <label for="view">视角</label>
-  <select id="view"><option value="detail">设备近景</option><option value="overhead">设备俯视</option><option value="home">全屋剖视</option></select>
+  <select id="view" disabled><option value="detail">近景</option><option value="overhead">俯视</option><option value="home">全屋剖视</option></select>
   <div id="switches"></div>
-  <label for="intensity">特效强度 <output id="value">70%</output></label>
-  <input id="intensity" type="range" min="0" max="100" value="70">
+  <label for="intensity">当前选择特效强度 <output id="value">70%</output></label>
+  <input id="intensity" type="range" min="0" max="100" value="70" disabled>
   <div id="status">正在加载模型…</div>
 </aside>
 <footer>拖动旋转 · 滚轮缩放 · 右键平移</footer>
@@ -55,6 +58,8 @@ const key = new THREE.DirectionalLight(0xffffff, 2);
 key.position.set(3, 7, 5);
 scene.add(key);
 const deviceSelect = document.querySelector("#device");
+const modeSelect = document.querySelector("#mode");
+const modeField = document.querySelector("#mode-field");
 const viewSelect = document.querySelector("#view");
 const switches = document.querySelector("#switches");
 const intensity = document.querySelector("#intensity");
@@ -63,26 +68,36 @@ let gltf;
 let chosen;
 const originalVisibility = new Map();
 
+function selectedEffects() {
+  const zone = controls.controls.get(deviceSelect.value);
+  return zone?.effect === "floor_heating" ? [zone]
+    : controls.manifest.effectControls.filter((entry) => entry.root === deviceSelect.value);
+}
+
 function focusDevice() {
-  chosen = controls.objects.get(deviceSelect.value);
+  const effects = selectedEffects();
+  chosen = controls.objects.get(effects[0].root);
   const home = viewSelect.value === "home";
+  const floor = chosen.name === "地砖";
   gltf.scene.traverse((object) => {
     if (!object.isMesh || object.name.endsWith("__runtime_effect")) return;
     let node = object;
     while (node && node !== chosen) node = node.parent;
     let ceiling = object;
     while (ceiling && ceiling.userData.threejs_role !== "ceiling_interior_thickness_visual") ceiling = ceiling.parent;
-    object.visible = originalVisibility.get(object) && (home ? !ceiling : node === chosen);
+    object.visible = originalVisibility.get(object) && (home || floor ? !ceiling : node === chosen);
   });
   chosen.updateWorldMatrix(true, true);
   const center = chosen.getWorldPosition(new THREE.Vector3());
-  const effects = controls.manifest.effectControls.filter((entry) => entry.root === chosen.name);
   const anchor = controls.objects.get(effects[0].emitter);
   const axis = new THREE.Vector3(0, 1, 0).transformDirection(anchor.matrixWorld);
   const target = anchor.getWorldPosition(new THREE.Vector3()).addScaledVector(axis, 0.45);
   if (home) {
     orbit.target.set(0, 0.8, 0);
     camera.position.set(8, 19, 14);
+  } else if (floor) {
+    orbit.target.set(0, 0, 1.5);
+    camera.position.set(...(viewSelect.value === "overhead" ? [0, 29, 1.51] : [8, 11, 13]));
   } else {
     orbit.target.copy(target);
     if (viewSelect.value === "overhead") {
@@ -99,15 +114,30 @@ function focusDevice() {
     effect.mesh.visible = controls.getState(id) === "on" && controls.effectSettings.get(id).intensity > 0
       && (home || controls.getControl(id).root === chosen.name);
   }
+  document.querySelector("#status").textContent = floor
+    ? "四区独立控制。地台造型周边地砖归客厅组；主卫、次卫、地台实体及其右侧外伸地砖不供暖。"
+    : effects[0].modes ? "制冷为蓝色，加热为暖橙色，送风为绿色。模式与开关独立。"
+      : "吹风为蓝色，加热为暖橙色，流线形状相同；浴霸照明独立控制。";
 }
 
 function buildSwitches() {
   switches.replaceChildren();
-  const effectControls = controls.manifest.effectControls.filter((entry) => entry.root === deviceSelect.value);
+  const effectControls = selectedEffects();
+  const modeControl = effectControls.find((entry) => entry.modes);
+  modeField.hidden = !modeControl;
+  modeSelect.disabled = !modeControl;
+  modeSelect.replaceChildren();
+  if (modeControl) {
+    for (const [mode, entry] of Object.entries(modeControl.modes)) {
+      modeSelect.add(new Option(entry.label, mode));
+    }
+    modeSelect.value = controls.getEffectMode(modeControl.id);
+  }
   const lightControls = controls.manifest.lightControls.filter((entry) => entry.root === deviceSelect.value);
   for (const entry of [...effectControls, ...lightControls]) {
     const button = document.createElement("button");
-    button.textContent = entry.type === "light" ? "照明" : entry.effect === "heat" ? "加热" : "吹风";
+    button.textContent = entry.type === "light" ? "照明"
+      : entry.effect === "floor_heating" ? entry.zone.label : entry.effect === "heat" ? "加热" : "吹风";
     button.dataset.control = entry.id;
     button.setAttribute("aria-pressed", controls.getState(entry.id) === "on");
     button.onclick = () => {
@@ -118,15 +148,20 @@ function buildSwitches() {
     switches.append(button);
   }
   const strength = controls.effectSettings.get(effectControls[0].id).intensity;
+  const mixed = effectControls.some((entry) => controls.effectSettings.get(entry.id).intensity !== strength);
   intensity.value = strength * 100;
-  document.querySelector("#value").value = `${Math.round(strength * 100)}%`;
+  document.querySelector("#value").value = mixed ? "各项强度不同" : `${Math.round(strength * 100)}%`;
 }
 
 deviceSelect.onchange = () => { focusDevice(); buildSwitches(); };
+modeSelect.onchange = () => {
+  const entry = selectedEffects().find((effect) => effect.modes);
+  if (entry) controls.setEffectMode(entry.id, modeSelect.value);
+};
 viewSelect.onchange = focusDevice;
 intensity.oninput = () => {
   const value = Number(intensity.value) / 100;
-  for (const entry of controls.manifest.effectControls.filter((entry) => entry.root === chosen.name)) {
+  for (const entry of selectedEffects()) {
     controls.setEffectIntensity(entry.id, value);
   }
   document.querySelector("#value").value = `${intensity.value}%`;
@@ -141,13 +176,20 @@ try {
   for (const entry of controls.manifest.lightControls) controls.setState(entry.id, "off");
   gltf.scene.traverse((object) => originalVisibility.set(object, object.visible));
   for (const name of new Set(controls.manifest.effectControls.map((entry) => entry.root))) {
-    deviceSelect.add(new Option(name, name));
+    deviceSelect.add(new Option(name === "地砖" ? "地暖 · 全部分区" : name, name));
+    if (name === "地砖") {
+      for (const entry of controls.manifest.effectControls.filter((c) => c.effect === "floor_heating")) {
+        deviceSelect.add(new Option(`地暖 · ${entry.zone.label}`, entry.id));
+      }
+    }
   }
-  deviceSelect.value = "客厅空调";
+  deviceSelect.value = "地砖";
+  viewSelect.value = "overhead";
   deviceSelect.disabled = false;
+  viewSelect.disabled = false;
+  intensity.disabled = false;
   focusDevice();
   buildSwitches();
-  document.querySelector("#status").textContent = "模型已加载 · 特效默认关闭";
   // Exposed for integration checks and interactive experiments in DevTools.
   window.deviceEffectsDemo = { controls, gltf, scene, camera, renderer, focusDevice, orbit };
 } catch (error) {
