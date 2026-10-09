@@ -4998,6 +4998,124 @@
         "toggle"
       ],
       "adjustable": false
+    },
+    {
+      "id": "light_terrace_wall_sconce",
+      "label": "露台_复古弯臂壁灯",
+      "type": "light",
+      "interaction": "toggle",
+      "states": [
+        "off",
+        "on"
+      ],
+      "defaultState": "on",
+      "root": "露台_上下照壁灯",
+      "clickTargets": [
+        "露台_上下照壁灯_灯体"
+      ],
+      "lights": [
+        {
+          "object": "露台_上下照壁灯_上照光源",
+          "onEnergyBlender": 2.5,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "POINT",
+          "gltfLightType": "point"
+        },
+        {
+          "object": "露台_上下照壁灯_下照光源",
+          "onEnergyBlender": 14.0,
+          "offEnergyBlender": 0.0,
+          "sourceLightType": "SPOT",
+          "gltfLightType": "spot"
+        }
+      ],
+      "emissiveTargets": [
+        {
+          "object": "露台_上下照壁灯_上照透镜",
+          "materials": [
+            {
+              "material": "露台_复古弯臂壁灯_3000K乳白灯泡",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 4.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.6949,
+                    0.4315,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "object": "露台_上下照壁灯_下照透镜",
+          "materials": [
+            {
+              "material": "露台_复古弯臂壁灯_3000K乳白灯泡",
+              "slot": 0,
+              "nodes": [
+                {
+                  "node": "原理化 BSDF",
+                  "nodeType": "Principled",
+                  "onStrength": 4.0,
+                  "offStrength": 0.0,
+                  "color": [
+                    1.0,
+                    0.6949,
+                    0.4315,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "on": {
+          "visible": true,
+          "intensityScale": 1.0,
+          "emissiveIntensityScale": 1.0
+        },
+        "off": {
+          "visible": false,
+          "intensityScale": 0.0,
+          "emissiveIntensityScale": 0.0
+        }
+      },
+      "capabilities": [
+        "toggle",
+        "brightness",
+        "color_temperature"
+      ],
+      "adjustable": true,
+      "colorTemperatureK": {
+        "min": 2700,
+        "max": 6500,
+        "default": 3000,
+        "step": 1
+      },
+      "brightness": {
+        "min": 0.0,
+        "max": 1.0,
+        "default": 1.0,
+        "step": 0.01,
+        "unit": "normalized"
+      },
+      "photometric": {
+        "ratedPowerW": 6,
+        "luminousFluxLm": 420,
+        "criRaMin": 90,
+        "beamAngleDeg": 100,
+        "rotationRangeDeg": 0,
+        "distribution": "downward_shaded_bulb"
+      }
     }
   ],
   "runtimeContract": {
